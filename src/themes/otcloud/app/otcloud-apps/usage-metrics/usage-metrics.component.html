@@ -1,0 +1,15 @@
+@if (reportsLoaded) {
+<section class="simple-view-element mb-3">
+    <h4 class="simple-view-element-header">Usage Metrics</h4>
+    <div class="metrics-row d-flex gap-3">
+        <div aria-hidden="false" class="metric text-center">
+            <b class="metric-count">{{ totalViews }} </b>
+            <span class="metric-name d-block"> views </span>
+        </div>
+        <div aria-hidden="false" class="metric text-center">
+            <b class="metric-count">{{ totalDownloads }}</b>
+            <span class="metric-name d-block"> downloads </span>
+        </div>
+    </div>
+</section>
+}
