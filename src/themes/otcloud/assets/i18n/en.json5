@@ -1,5 +1,9 @@
 {
   "item.page.nonentityprefix": "Publication",
+  "item.listelement.badge": "Publication",
+  "item.version.history.table.item": "Publication",
+  "menu.section.edit_item": "Publication",
+  "menu.section.export_item": "Publication",
 
   "item.page.usageStatistics": "Usage Statistics",
   "item.page.visitsByMonth": "Visits by Month",
@@ -2799,8 +2803,6 @@
 
   "item.orcid.return": "Back",
 
-  "item.listelement.badge": "Item",
-
   "item.page.description": "Description",
 
   "item.page.org-unit": "Organizational Unit",
@@ -3106,8 +3108,6 @@
   "item.version.history.selected.alert": "You are currently viewing version {{version}} of the item.",
 
   "item.version.history.table.version": "Version",
-
-  "item.version.history.table.item": "Item",
 
   "item.version.history.table.editor": "Editor",
 
@@ -3489,15 +3489,11 @@
 
   "menu.section.edit_community": "Community",
 
-  "menu.section.edit_item": "Item",
-
   "menu.section.export": "Export",
 
   "menu.section.export_collection": "Collection",
 
   "menu.section.export_community": "Community",
-
-  "menu.section.export_item": "Item",
 
   "menu.section.export_metadata": "Metadata",
 

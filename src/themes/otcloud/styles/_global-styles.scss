@@ -15,6 +15,14 @@
     --unapec-red: #c7262b;
 }
 
+$primary: var(--unapec-blue) !default;
+$secondary: var(--unapec-gold) !default;
+$danger: var(--unapec-red) !default;
+
+.bg-secondary {
+    background-color: var(--unapec-blue) !important;
+}
+
 .bg-unapec-red {
     background-color: var(--unapec-red);
 }
@@ -39,6 +47,11 @@
     color: var(--unapec-gold);
 }
 
+.btn-primary {
+    background-color: var(--unapec-blue) !important;
+    border-color: var(--unapec-blue) !important;
+}
+
 body {
     font-family: "Avenir Next LT Pro", "Gotham", "Exo", "Montserrat", Arial, sans-serif !important;
 }
@@ -58,6 +71,17 @@ body {
     font-family: "Avenir Next LT Pro", "Gotham", "Exo", "Montserrat", Arial, sans-serif !important;
 }
 
+a,
+.btn-link {
+    color: var(--unapec-light-blue) !important;
+}
+
+a.list-group-item.active {
+    color: white !important;
+    background-color: var(--unapec-blue) !important;
+    border-color: var(--unapec-blue) !important;
+}
+
 nav#main-navbar {
     background-color: var(--unapec-blue);
     color: white !important;
@@ -73,6 +97,21 @@ nav#main-navbar {
 
 #header-navbar-wrapper .dropdown-menu {
     background-color: var(--unapec-blue);
+
+    a {
+        color: white !important;
+    }
+
+    .dropdown-item:hover,
+    .dropdown-item:focus {
+        background-color: var(--unapec-light-blue);
+    }
+
+    .btn:hover {
+        color: white !important;
+        background-color: var(--unapec-light-blue);
+        border-color: var(--unapec-light-blue);
+    }
 }
 
 header .navbar .submit-icon,
@@ -142,4 +181,64 @@ div#header-navbar-wrapper {
     border-color: #fff !important;
     color: var(--unapec-red) !important;
     box-shadow: none !important;
+}
+
+// .search-sidebar-content 
+.sidebar-content .facet-filter,
+.setting-option {
+    box-shadow: 0 0 5px 3px #eee !important;
+    border: none !important;
+}
+
+.sidebar-content .facet-filter i {
+    color: var(--unapec-red) !important;
+}
+
+ds-item-search-result-list-element .bg-info,
+ds-recent-item-list span.bg-info {
+    background-color: var(--unapec-blue) !important;
+}
+
+ds-item-search-result-list-element .btn-link,
+ds-recent-item-list .btn-link {
+    color: var(--unapec-blue) !important;
+}
+
+ds-item-search-result-list-element .item-list-title,
+ds-recent-item-list .item-list-title {
+    color: var(--bs-heading-color) !important;
+    font-weight: 500 !important;
+}
+
+.page-internal-server-error .btn {
+    background-color: var(--unapec-blue) !important;
+    border-color: var(--unapec-blue) !important;
+    color: white !important;
+}
+
+ds-rss a {
+    color: white !important;
+}
+
+.badge.bg-primary {
+    background-color: var(--unapec-red) !important;
+    color: white !important;
+}
+
+.page-link.active,
+.active>.page-link {
+    color: white !important;
+    background-color: var(--unapec-red) !important;
+    border-color: var(--unapec-red) !important;
+}
+
+.btn-outline-primary {
+    border-color: var(--unapec-blue) !important;
+    color: var(--unapec-blue) !important;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--unapec-blue) !important;
+    border-color: var(--unapec-blue) !important;
+    color: white !important;
 }

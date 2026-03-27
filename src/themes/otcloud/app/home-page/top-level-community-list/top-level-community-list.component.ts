@@ -37,12 +37,12 @@ interface FetchedCommunity {
 export class TopLevelCommunityListComponent extends BaseComponent {
   communitiesFetched: FetchedCommunity[] = [];
   featuredCommunities: { [key: string]: string } = {
-    '248cb0be-c119-4089-855a-5cb945fba838': 'fa-address-card',
-    '1ec4fa24-4c0e-47ef-84d8-399f1dac1e69': 'fa-area-chart',
-    'b8735929-6307-4a8b-8ca2-a1dd7abcfa72': 'fa-book',
-    'cc59921e-c92a-40f7-b710-8591866d375d': 'fa-line-chart',
-    '6ab0f98f-3695-4fac-a0bc-ab35d887b6e2': 'fa-university',
-    '667ed4c7-087f-467f-b3f0-5ddcb218811c': 'fa-chart-area',
+    '248cb0be-c119-4089-855a-5cb945fba838': 'docencia',
+    '1ec4fa24-4c0e-47ef-84d8-399f1dac1e69': 'investigacion',
+    'b8735929-6307-4a8b-8ca2-a1dd7abcfa72': 'institucional',
+    'cc59921e-c92a-40f7-b710-8591866d375d': 'publicaciones',
+    '6ab0f98f-3695-4fac-a0bc-ab35d887b6e2': 'library',
+    '667ed4c7-087f-467f-b3f0-5ddcb218811c': 'theses',
   };
 
   constructor(@Inject(APP_CONFIG) protected appConfig: AppConfig,
