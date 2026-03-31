@@ -7331,4 +7331,12 @@
   "item.page.visitsByMonth": "Visits by Month",
 
   "item.page.downloadsByMonth": "Downloads by Month",
+
+  "item.page.citeThisItem": "Cite this Item ",
+
+  "item.page.bibliographicManagers": "Bibliographic Managers",
+
+  "item.page.selectFormat": "Select Citation Style",
+
+  "item.page.usageMetrics": "Usage Metrics",
 }

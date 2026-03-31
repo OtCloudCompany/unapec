@@ -6,8 +6,22 @@
   "menu.section.export_item": "Publication",
 
   "item.page.usageStatistics": "Usage Statistics",
+  "item.page.usageMetrics": "Usage Metrics",
   "item.page.visitsByMonth": "Visits by Month",
   "item.page.downloadsByMonth": "Downloads by Month",
+
+  "footer.link.dspace": "Repositorio de UNAPEC",
+  "footer.copyright": "Copyright © {{year}} Universidad APEC. All rights reserved.",
+  "footer.link.cookies": "Cookie Settings",
+  "footer.link.accessibility": "Accessibility",
+  "footer.link.privacy-policy": "Privacy Policy",
+  "footer.link.end-user-agreement": "End User Agreement",
+  "footer.link.feedback": "Send Feedback",
+  "footer.link.coar-notify-support": "COAR Notify Support",
+
+  "item.page.citeThisItem": "Cite this Item ",
+  "item.page.bibliographicManagers": "Bibliographic Managers",
+  "item.page.selectFormat": "Select Citation Style",
 
   "401.help": "You're not authorized to access this page. You can use the button below to get back to the home page.",
 

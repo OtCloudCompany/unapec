@@ -30,6 +30,7 @@ import { OtcloudAbstractFieldComponent } from 'src/themes/otcloud/app/otcloud-ap
 import { UsageMetricsComponent } from 'src/themes/otcloud/app/otcloud-apps/usage-metrics/usage-metrics.component';
 import { UsageStatisticsComponent } from 'src/themes/otcloud/app/otcloud-apps/usage-statistics/usage-statistics.component';
 import { OtcloudDescriptionFieldComponent } from 'src/themes/otcloud/app/otcloud-apps/otcloud-description-field/otcloud-description-field.component';
+import { CitationGeneratorComponent } from 'src/themes/otcloud/app/otcloud-apps/citation-generator/citation-generator.component';
 
 
 @listableObjectComponent(Item, ViewMode.StandalonePage, Context.Any, 'otcloud')
@@ -59,7 +60,7 @@ import { OtcloudDescriptionFieldComponent } from 'src/themes/otcloud/app/otcloud
     ThemedResultsBackButtonComponent,
     ThemedThumbnailComponent,
     TranslateModule,
-    UsageMetricsComponent,
+    UsageMetricsComponent, CitationGeneratorComponent,
     UsageStatisticsComponent, ItemPageNavbarComponent, OtcloudAbstractFieldComponent, OtcloudDescriptionFieldComponent
   ],
 })

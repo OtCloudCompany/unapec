@@ -35,6 +35,10 @@ $danger: var(--unapec-red) !default;
     background-color: var(--unapec-gold);
 }
 
+.bg-unapec-light-blue {
+    background-color: var(--unapec-light-blue);
+}
+
 .color-unapec-red {
     color: var(--unapec-red);
 }
@@ -154,8 +158,27 @@ div#header-navbar-wrapper {
 
 .home-news-content {
     background-color: var(--unapec-blue);
-    background-image: url(/assets/otcloud/images/banner-artic-noticia.jpg);
     background-size: cover;
+}
+
+.home-news-carousel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+
+    .carousel-inner,
+    .carousel-item {
+        height: 100%;
+    }
+
+    img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
 }
 
 .home-news-content .max-width-700 {
@@ -241,4 +264,35 @@ ds-rss a {
     background-color: var(--unapec-blue) !important;
     border-color: var(--unapec-blue) !important;
     color: white !important;
+}
+
+.modal-footer .btn:hover {
+    color: white !important;
+    text-decoration: none;
+    background-color: var(--unapec-gold) !important;
+    border-color: var(--unapec-gold) !important;
+}
+
+#bibliographicManagers h5 {
+    display: inline;
+    color: white;
+}
+
+#bibliographicManagers ul li a img {
+    cursor: pointer;
+    max-width: 130px;
+    height: 30px;
+}
+
+footer .top-footer {
+    background-color: var(--unapec-blue) !important;
+}
+
+footer .btn-link {
+    color: white !important;
+}
+
+span.bg-unapec-light-blue {
+    color: white !important;
+    font-weight: 700 !important;
 }

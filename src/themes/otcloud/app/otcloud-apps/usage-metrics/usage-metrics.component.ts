@@ -5,19 +5,19 @@ import {
   OnInit,
   Output,
 } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { DSpaceObject } from 'src/app/core/shared/dspace-object.model';
 import { UsageReport } from 'src/app/core/statistics/models/usage-report.model';
 import { UsageReportDataService } from 'src/app/core/statistics/usage-report-data.service';
 
 @Component({
   selector: 'ds-usage-metrics',
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './usage-metrics.component.html',
   styleUrl: './usage-metrics.component.scss',
 })
 export class UsageMetricsComponent implements OnInit {
   @Input() item: DSpaceObject;
-
   @Output() reportLoaded = new EventEmitter<UsageReport[]>();
 
   usageReport: UsageReport[] | null;
