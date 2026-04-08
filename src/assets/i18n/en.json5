@@ -1962,11 +1962,11 @@
 
   "file-section.error.header": "Error obtaining files for this item",
 
-  "footer.copyright": "copyright © 2002-{{ year }}",
+  "footer.copyright": "Copyright © {{year}}. All rights reserved.",
 
   "footer.link.accessibility": "Accessibility settings",
 
-  "footer.link.dspace": "DSpace software",
+  "footer.link.dspace": "Universidad APEC, ",
 
   "footer.link.lyrasis": "LYRASIS",
 
@@ -7339,4 +7339,6 @@
   "item.page.selectFormat": "Select Citation Style",
 
   "item.page.usageMetrics": "Usage Metrics",
+
+  "item.page.isbn": "ISBN",
 }

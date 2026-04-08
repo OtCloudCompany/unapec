@@ -10,8 +10,8 @@
   "item.page.visitsByMonth": "Visits by Month",
   "item.page.downloadsByMonth": "Downloads by Month",
 
-  "footer.link.dspace": "Repositorio de UNAPEC",
-  "footer.copyright": "Copyright © {{year}} Universidad APEC. All rights reserved.",
+  "footer.link.dspace": "Universidad APEC, ",
+  "footer.copyright": "Copyright © {{year}}. All rights reserved.",
   "footer.link.cookies": "Cookie Settings",
   "footer.link.accessibility": "Accessibility",
   "footer.link.privacy-policy": "Privacy Policy",
@@ -22,6 +22,9 @@
   "item.page.citeThisItem": "Cite this Item ",
   "item.page.bibliographicManagers": "Bibliographic Managers",
   "item.page.selectFormat": "Select Citation Style",
+  "item.page.isbn": "ISBN",
+
+  "footer.link.lyrasis": "LYRASIS",  
 
   "401.help": "You're not authorized to access this page. You can use the button below to get back to the home page.",
 
@@ -1985,13 +1988,7 @@
 
   "file-section.error.header": "Error obtaining files for this item",
 
-  "footer.copyright": "copyright © 2002-{{ year }}",
-
   "footer.link.accessibility": "Accessibility settings",
-
-  "footer.link.dspace": "DSpace software",
-
-  "footer.link.lyrasis": "LYRASIS",
 
   "footer.link.cookies": "Cookie settings",
 
