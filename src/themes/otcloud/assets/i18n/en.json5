@@ -4,6 +4,7 @@
   "item.version.history.table.item": "Publication",
   "menu.section.edit_item": "Publication",
   "menu.section.export_item": "Publication",
+  "homepage.community-list.item": "Items",
 
   "item.page.usageStatistics": "Usage Statistics",
   "item.page.usageMetrics": "Usage Metrics",
@@ -18,13 +19,25 @@
   "footer.link.end-user-agreement": "End User Agreement",
   "footer.link.feedback": "Send Feedback",
   "footer.link.coar-notify-support": "COAR Notify Support",
+  "footer.social-media.header": "Get the latest from our Social Media Platforms",
 
   "item.page.citeThisItem": "Cite this Item ",
   "item.page.bibliographicManagers": "Bibliographic Managers",
   "item.page.selectFormat": "Select Citation Style",
   "item.page.isbn": "ISBN",
 
-  "footer.link.lyrasis": "LYRASIS",  
+  "menu.section.browse_global_communities_and_collections": "Explore Collections",
+  "repository.title": "Repositorio de UNAPEC",
+  "repository.title.prefix": "Repositorio de UNAPEC :: ",
+  "dso-selector.set-scope.community.button": "Search entire repository",
+  "menu.section.browse_global": "Browse Repository",
+  "nav.browse.header": "Entire Repository",
+  "search.form.search_dspace": "All repository",
+  "search.form.scope.all": "Entire Repository",
+  "home.top-level-communities.head": "Explore Content Communities",
+  "communityList.title": "Explore Content Collections",
+
+  "footer.link.lyrasis": "LYRASIS",
 
   "401.help": "You're not authorized to access this page. You can use the button below to get back to the home page.",
 
@@ -1450,8 +1463,6 @@
 
   "communityList.tabTitle": "Community List",
 
-  "communityList.title": "List of Communities",
-
   "communityList.showMore": "Show More",
 
   "communityList.expand": "Expand {{ name }}",
@@ -1819,8 +1830,6 @@
   "dso-selector.select.collection.head": "Select a collection",
 
   "dso-selector.set-scope.community.head": "Select a search scope",
-
-  "dso-selector.set-scope.community.button": "Search all of DSpace",
 
   "dso-selector.set-scope.community.or-divider": "or",
 
@@ -2229,8 +2238,6 @@
   "home.search-form.placeholder": "Search the repository ...",
 
   "home.title": "Home",
-
-  "home.top-level-communities.head": "Communities in DSpace",
 
   "home.top-level-communities.help": "Select a community to browse its collections.",
 
@@ -3472,8 +3479,6 @@
 
   "menu.section.browse_community_by_title": "By Title",
 
-  "menu.section.browse_global": "All of DSpace",
-
   "menu.section.browse_global_by_author": "By Author",
 
   "menu.section.browse_global_by_dateissued": "By Issue Date",
@@ -3485,8 +3490,6 @@
   "menu.section.browse_global_by_nsi": "By Norwegian Science Index",
 
   "menu.section.browse_global_by_title": "By Title",
-
-  "menu.section.browse_global_communities_and_collections": "Communities & Collections",
 
   "menu.section.browse_global_geospatial_map": "By Geolocation (Map)",
 
@@ -3703,8 +3706,6 @@
   "notification.suggestion.review": "review the suggestions",
 
   "notification.suggestion.please": "Please",
-
-  "nav.browse.header": "All of DSpace",
 
   "nav.community-browse.header": "By Community",
 
@@ -4442,10 +4443,6 @@
 
   "repository.image.logo": "Repository logo",
 
-  "repository.title": "DSpace Repository",
-
-  "repository.title.prefix": "DSpace Repository :: ",
-
   "resource-policies.add.button": "Add",
 
   "resource-policies.add.for.": "Add a new policy",
@@ -4882,10 +4879,6 @@
   "search.filters.operator.query.text": "Query",
 
   "search.form.search": "Search",
-
-  "search.form.search_dspace": "All repository",
-
-  "search.form.scope.all": "All of DSpace",
 
   "search.results.head": "Search Results",
 
