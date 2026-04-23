@@ -36,6 +36,9 @@
   "search.form.scope.all": "Entire Repository",
   "home.top-level-communities.head": "Explore Content Communities",
   "communityList.title": "Explore Content Collections",
+  "login.form.header": "Please login",
+  "person.page.titleprefix": "Person",
+  "item.page.link.full": "All Metadata",
 
   "footer.link.lyrasis": "LYRASIS",
 
@@ -2945,8 +2948,6 @@
 
   "item.page.journal.search.title": "Articles in this journal",
 
-  "item.page.link.full": "Full item page",
-
   "item.page.link.simple": "Simple item page",
 
   "item.page.options": "Options",
@@ -3418,8 +3419,6 @@
   "login.form.email": "Email address",
 
   "login.form.forgot-password": "Have you forgotten your password?",
-
-  "login.form.header": "Please log in to DSpace",
 
   "login.form.new-user": "New user? Click here to register.",
 
@@ -3946,8 +3945,6 @@
   "person.page.orcid": "ORCID",
 
   "person.page.staffid": "Staff ID",
-
-  "person.page.titleprefix": "Person: ",
 
   "person.search.results.head": "Person Search Results",
 

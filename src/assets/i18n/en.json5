@@ -2920,7 +2920,7 @@
 
   "item.page.journal.search.title": "Articles in this journal",
 
-  "item.page.link.full": "Full item page",
+  "item.page.link.full": "All Metadata",
 
   "item.page.link.simple": "Simple item page",
 
@@ -3392,7 +3392,7 @@
 
   "login.form.forgot-password": "Have you forgotten your password?",
 
-  "login.form.header": "Please log in to DSpace",
+  "login.form.header": "Please login",
 
   "login.form.new-user": "New user? Click here to register.",
 
@@ -3930,7 +3930,7 @@
 
   "person.page.staffid": "Staff ID",
 
-  "person.page.titleprefix": "Person: ",
+  "person.page.titleprefix": "Person",
 
   "person.search.results.head": "Person Search Results",
 

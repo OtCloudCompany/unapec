@@ -1,8 +1,7 @@
 import { AsyncPipe } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
-import { GenericItemPageFieldComponent } from 'src/app/item-page/simple/field-components/specific-field/generic/generic-item-page-field.component';
 import { ThemedItemPageTitleFieldComponent } from 'src/app/item-page/simple/field-components/specific-field/title/themed-item-page-field.component';
 import { TabbedRelatedEntitiesSearchComponent } from 'src/app/item-page/simple/related-entities/tabbed-related-entities-search/tabbed-related-entities-search.component';
 import { RelatedItemsComponent } from 'src/app/item-page/simple/related-items/related-items-component';
@@ -15,18 +14,19 @@ import { Context } from '../../../../../../../app/core/shared/context.model';
 import { ViewMode } from '../../../../../../../app/core/shared/view-mode.model';
 import { PersonComponent as BaseComponent } from '../../../../../../../app/entity-groups/research-entities/item-pages/person/person.component';
 import { listableObjectComponent } from '../../../../../../../app/shared/object-collection/shared/listable-object/listable-object.decorator';
+import { TruncatableComponent } from 'src/app/shared/truncatable/truncatable.component';
+import { TruncatablePartComponent } from 'src/app/shared/truncatable/truncatable-part/truncatable-part.component';
+import { CapitalizePipe } from 'src/app/shared/utils/capitalize.pipe';
+import { StripLineBreaksPipe } from 'src/themes/otcloud/app/otcloud-apps/strip-line-breaks.pipe';
 
-@listableObjectComponent('Person', ViewMode.StandalonePage, Context.Any, 'custom')
+@listableObjectComponent('Person', ViewMode.StandalonePage, Context.Any, 'otcloud')
 @Component({
   selector: 'ds-person',
-  // styleUrls: ['./person.component.scss'],
   styleUrls: ['../../../../../../../app/entity-groups/research-entities/item-pages/person/person.component.scss'],
-  // templateUrl: './person.component.html',
-  templateUrl: '../../../../../../../app/entity-groups/research-entities/item-pages/person/person.component.html',
+  templateUrl: './person.component.html',
   imports: [
     AsyncPipe,
     DsoEditMenuComponent,
-    GenericItemPageFieldComponent,
     MetadataFieldWrapperComponent,
     RelatedItemsComponent,
     RouterLink,
@@ -34,8 +34,39 @@ import { listableObjectComponent } from '../../../../../../../app/shared/object-
     ThemedItemPageTitleFieldComponent,
     ThemedResultsBackButtonComponent,
     ThemedThumbnailComponent,
-    TranslateModule,
+    TranslateModule, TruncatableComponent,
+    TruncatablePartComponent, CapitalizePipe, StripLineBreaksPipe
   ],
 })
-export class PersonComponent extends BaseComponent {
+export class PersonComponent extends BaseComponent implements OnInit {
+  shareLinks: { facebook: string; twitter: string; linkedin: string; email: string } = {
+    facebook: '',
+    twitter: '',
+    linkedin: '',
+    email: '',
+  };
+  identifierURLs: string[];
+  handleIdentifier: string;
+  shortBio: string;
+  givenName: string;
+  familyName: string;
+  fullName: string;
+
+  ngOnInit(): void {
+    super.ngOnInit();
+    this.familyName = this.object.firstMetadataValue(['person.familyName']);
+    this.givenName = this.object.firstMetadataValue(['person.givenName']);
+    this.fullName = `${this.familyName}, ${this.givenName}`;
+    this.shortBio = this.object.firstMetadataValue(['person.shortBio']);
+    this.identifierURLs = this.object.allMetadataValues(['dc.identifier.uri']);
+    this.handleIdentifier = this.identifierURLs[this.identifierURLs.length - 1];
+    this.shareLinks = {
+      facebook: `https://www.facebook.com/sharer/sharer.php?u=${this.handleIdentifier}`,
+      twitter: `https://twitter.com/intent/tweet?text=${this.fullName}&url=${this.handleIdentifier}`,
+      linkedin: `https://www.linkedin.com/shareArticle?mini=true&url=${this.handleIdentifier}&title=${this.fullName}&summary=${this.shortBio}`,
+      email: `mailto:?subject=${encodeURIComponent(`Check out this Researcher Profile: ${this.fullName}`)}&body=${encodeURIComponent(
+        `Interesting Profile: ${this.fullName}\n\nRead it here: ${this.handleIdentifier}`,
+      )}`,
+    };
+  }
 }
