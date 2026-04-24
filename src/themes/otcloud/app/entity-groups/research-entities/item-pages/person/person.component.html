@@ -1,42 +1,20 @@
 @if (showBackButton$ | async) {
 <ds-results-back-button [back]="back"></ds-results-back-button>
 }
-<div class="d-flex flex-row">
+<div class="d-flex flex-row person-title">
     <ds-item-page-title-field class="me-auto" [item]="object">
     </ds-item-page-title-field>
     <ds-dso-edit-menu></ds-dso-edit-menu>
 </div>
 <div class="row">
     <div class="col-xs-12 col-md-4 bg-light py-3">
-        <div class="card mb-3">
-            <div class="card-header">
-                <h4 class="card-title mb-0">Share this Profile</h4>
-            </div>
-            <div class="card-body">
-                <nav class="nav d-flex flex-row justify-content-between">
-                    <a class="nav-link" [href]="shareLinks.twitter" title="Share on X">
-                        <i class="fab fa-x-twitter fa-xl"></i>
-                    </a>
-                    <a class="nav-link" [href]="shareLinks.linkedin">
-                        <i class="fab fa-linkedin fa-xl" title="Share on LinkedIn"></i>
-                    </a>
-                    <a class="nav-link" [href]="shareLinks.facebook" title="Share on Facebook">
-                        <i class="fab fa-facebook-square fa-xl"></i>
-                    </a>
-                    <a class="nav-link disabled" [href]="shareLinks.email" title="Share via Email">
-                        <i class="fas fa-envelope fa-xl"></i>
-                    </a>
-                </nav>
-            </div>
-        </div>
-        <div class="card d-flex justify-content-center mb-3">
-            <div class="card-body">
-                @if (!(mediaViewer.image || mediaViewer.video)) {
-                <ds-metadata-field-wrapper [hideIfNoTextContent]="false">
-                    <ds-thumbnail [thumbnail]="object?.thumbnail | async"></ds-thumbnail>
-                </ds-metadata-field-wrapper>
-                }
-            </div>
+
+        <div class="card profile-image mb-3">
+            @if (!(mediaViewer.image || mediaViewer.video)) {
+            <ds-metadata-field-wrapper [hideIfNoTextContent]="false">
+                <ds-thumbnail [thumbnail]="object?.thumbnail | async" [limitWidth]="false"></ds-thumbnail>
+            </ds-metadata-field-wrapper>
+            }
             <div class="card-footer pb-0 text-center">
                 @if (object.hasMetadata(['person.familyName'])) {
                 <div class="font-weight-bold">
@@ -49,10 +27,33 @@
                 </div>
                 }
                 @if (object.hasMetadata(['person.jobTitle'])) {
-                <div>
-                    <span>{{ object.firstMetadataValue(['person.jobTitle']) }}</span>
+                <div class="mb-2">
+                    <span>
+                        <strong>{{ object.firstMetadataValue(['person.jobTitle']) }}</strong>
+                    </span>
                 </div>
                 }
+            </div>
+        </div>
+        <div class="card mb-3">
+            <div class="card-header">
+                <h4 class="card-title mb-0">{{ 'item.page.person.shareProfile' | translate }}</h4>
+            </div>
+            <div class="card-body">
+                <nav class="nav d-flex flex-row justify-content-between">
+                    <a class="nav-link" [href]="shareLinks.twitter" title="Share on X">
+                        <i class="fab fa-x-twitter fa-xl"></i>
+                    </a>
+                    <a class="nav-link" [href]="shareLinks.linkedin">
+                        <i class="fab fa-linkedin fa-xl" title="Share on LinkedIn"></i>
+                    </a>
+                    <a class="nav-link" [href]="shareLinks.facebook" title="Share on Facebook">
+                        <i class="fab fa-facebook-square fa-xl"></i>
+                    </a>
+                    <a class="nav-link" [href]="shareLinks.email" title="Share via Email">
+                        <i class="fas fa-envelope fa-xl"></i>
+                    </a>
+                </nav>
             </div>
         </div>
         <div class="d-grid gap-2">
@@ -65,7 +66,7 @@
         @if (object?.firstMetadataValue('person.shortBio'); as shortBio) {
         <div class="abstract-field simple-view-element mb-4">
             <ds-truncatable [showToggle]="true" [id]="'bioOuter'">
-                <h5 class="simple-view-element-header">Short Bio</h5>
+                <h5 class="simple-view-element-header">{{ 'item.page.person.shortBio' | translate }}</h5>
                 <div class="justify-content-end mb-4 itempage-abstract">
                     <ds-truncatable-part [minLines]="4" [id]="'bioOuter'">
                         {{ shortBio | stripLineBreaks }}
@@ -79,37 +80,37 @@
                 <tbody>
                     @if (object.hasMetadata(['person.jobTitle'])) {
                     <tr>
-                        <td>Current Position</td>
+                        <td>{{ 'item.page.person.jobTitle' | translate }}</td>
                         <td>{{ object.firstMetadataValue(['person.jobTitle']) }}</td>
                     </tr>
                     }
                     @if (object.hasMetadata(['person.affiliation.institutionName'])) {
                     <tr>
-                        <td>Institution</td>
+                        <td>{{ 'item.page.person.affiliation.institutionName' | translate }}</td>
                         <td>{{ object.firstMetadataValue(['person.affiliation.institutionName']) }}</td>
                     </tr>
                     }
                     @if (object.hasMetadata(['person.affiliation.faculty'])) {
                     <tr>
-                        <td>Faculty</td>
+                        <td>{{ 'item.page.person.affiliation.faculty' | translate }}</td>
                         <td>{{ object.firstMetadataValue(['person.affiliation.faculty']) }}</td>
                     </tr>
                     }
                     @if (object.hasMetadata(['person.affiliation.department'])) {
                     <tr>
-                        <td>Department</td>
+                        <td>{{ 'item.page.person.affiliation.department' | translate }}</td>
                         <td>{{ object.firstMetadataValue(['person.affiliation.department']) }}</td>
                     </tr>
                     }
                     @if (object.hasMetadata(['person.specialty'])) {
                     <tr>
-                        <td>Specialty</td>
+                        <td>{{ 'item.page.person.specialty' | translate }}</td>
                         <td>{{ object.firstMetadataValue(['person.specialty']) }}</td>
                     </tr>
                     }
                     @if (object.hasMetadata(['person.academicQualification'])) {
                     <tr>
-                        <td>Academic Qualifications</td>
+                        <td>{{ 'item.page.person.academicQualifications' | translate }}</td>
                         <td>
                             @for (academicQualification of object.allMetadataValues(['person.academicQualification']);
                             track $index; let last = $last) {
@@ -121,7 +122,7 @@
                     }
                     @if (object.hasMetadata(['person.identifier.gsid'])) {
                     <tr>
-                        <td>Google Scholar</td>
+                        <td>{{ 'item.page.person.identifier.gsid' | translate }}</td>
                         <td>
                             <a [href]="object.firstMetadataValue(['person.identifier.gsid'])" target="_blank">
                                 {{ object.firstMetadataValue(['person.identifier.gsid']) }}
@@ -131,7 +132,7 @@
                     }
                     @if (object.hasMetadata(['person.identifier.orcid'])) {
                     <tr>
-                        <td>ORCiD</td>
+                        <td>{{ 'item.page.person.identifier.orcid' | translate }}</td>
                         <td>
                             <a [href]="object.firstMetadataValue(['person.identifier.orcid'])" target="_blank">
                                 {{ object.firstMetadataValue(['person.identifier.orcid']) }}
@@ -141,27 +142,26 @@
                     }
                     @if (object.hasMetadata(['person.identifier.isni'])) {
                     <tr>
-                        <td>ISNI</td>
+                        <td>{{ 'item.page.person.identifier.isni' | translate }}</td>
                         <td>
-                            <!-- <a [href]="object.firstMetadataValue(['person.identifier.isni'])" target="_blank"> -->
                             {{ object.firstMetadataValue(['person.identifier.isni']) }}
-                            <!-- </a> -->
                         </td>
                     </tr>
                     }
                     @if (object.hasMetadata(['dc.identifier.uri'])) {
                     <tr>
-                        <td>Profile Permalink</td>
+                        <td>{{ 'item.page.person.identifier.uri' | translate }}</td>
                         <td><a [href]="handleIdentifier">{{ handleIdentifier }}</a></td>
                     </tr>
                     }
                     @if (object.hasMetadata(['person.knowsLanguage'])) {
                     <tr>
-                        <td>Languages</td>
+                        <td>{{ 'item.page.person.knowsLanguage' | translate }}</td>
                         <td>
                             @for (knownLanguage of object.allMetadataValues(['person.knowsLanguage']);
                             track $index; let last = $last) {
-                            <span class="badge badge-pill bg-unapec-light-blue mx-1">{{ knownLanguage }}</span>
+                            <span class="badge badge-pill bg-unapec-light-blue mx-1">{{ getLanguageName(knownLanguage)
+                                }}</span>
                             @if (!last) { <span class="separator"> </span> }
                             }
                         </td>
@@ -172,7 +172,7 @@
         </div>
         @if (object.hasMetadata(['person.subjectInterest'])) {
         <div class="simple-view-element mb-3 p-3">
-            <h4 class="simple-view-element-header">Áreas de interés</h4>
+            <h4 class="simple-view-element-header">{{ 'item.page.person.subjectInterest' | translate }}</h4>
             @for (mdValue of object.allMetadataValues(['person.subjectInterest']); track $index; let last = $last) {
             <span class="badge badge-pill bg-unapec-light-blue mx-1">{{ mdValue }}</span>
             @if (!last) {

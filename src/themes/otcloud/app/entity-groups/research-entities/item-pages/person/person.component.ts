@@ -69,4 +69,18 @@ export class PersonComponent extends BaseComponent implements OnInit {
       )}`,
     };
   }
+
+  /**
+   * Converts an ISO language code to its full English display name.
+   * @param isoCode standard ISO language code
+   * @returns full language name in English
+   */
+  getLanguageName(isoCode: string): string {
+    try {
+      const displayNames = new Intl.DisplayNames(['en'], { type: 'language' });
+      return displayNames.of(isoCode) || isoCode;
+    } catch (e) {
+      return isoCode;
+    }
+  }
 }

@@ -302,3 +302,19 @@ span.bg-unapec-light-blue {
     background: var(--unapec-blue) !important;
     border-color: var(--unapec-blue) !important;
 }
+
+.profile-image {
+    img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .simple-view-element {
+        margin-bottom: 0 !important;
+    }
+}
+
+.person-title .item-page-title-field {
+    font-size: larger;
+}

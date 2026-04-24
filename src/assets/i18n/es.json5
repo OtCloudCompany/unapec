@@ -7345,4 +7345,48 @@
   "homepage.community-list.item": "Elementos",
 
   "footer.social-media.header": "Mantente actualizado de nuestras plataformas de redes sociales",
+
+  "search.filters.applied.f.isAuthorOfPublication": "ID de autor: ",
+
+  "item.page.person.academicQualifications": "Cualificaciones Académicas",
+
+  "item.page.person.affiliation.department": "Departamento",
+
+  "item.page.person.affiliation.faculty": "Facultad",
+
+  "item.page.person.affiliation.institutionName": "Institución",
+
+  "item.page.person.identifier.email": "Correo electrónico",
+
+  "item.page.person.identifier.orcid": "ORCID",
+
+  "item.page.person.identifier.phone": "Teléfono",
+
+  "item.page.person.identifier.uri": "Dirección del perfil",
+
+  "item.page.person.identifier.linkedin": "LinkedIn",
+
+  "item.page.person.identifier.gsid": "Google Scholar",
+
+  "item.page.person.identifier.isni": "ISNI",
+
+  "item.page.person.email": "Correo electrónico",
+
+  "item.page.person.familyName": "Apellido",
+
+  "item.page.person.givenName": "Nombre",
+
+  "item.page.person.jobTitle": "Título profesional",
+
+  "item.page.person.knowsLanguage": "Áreas de interés",
+
+  "item.page.person.phoneNumber": "Número de teléfono",
+
+  "item.page.person.shortBio": "Breve biografía",
+
+  "item.page.person.specialty": "Especialidad",
+
+  "item.page.person.subjectInterest": "Áreas de interés",
+
+  "item.page.person.shareProfile": "Compartir este perfil",
 }
