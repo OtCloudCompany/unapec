@@ -158,6 +158,12 @@ export const APP_ROUTES: Route[] = [
         canActivate: [endUserAgreementCurrentUserGuard],
       },
       {
+        path: 'legacy-statistics',
+        loadComponent: () => import('../themes/otcloud/app/otcloud-apps/legacy-statistics/legacy-statistics.component')
+          .then((m) => m.LegacyStatisticsComponent),
+        canActivate: [endUserAgreementCurrentUserGuard],
+      },
+      {
         path: 'browse',
         loadChildren: () => import('./browse-by/browse-by-page-routes')
           .then((m) => m.ROUTES),

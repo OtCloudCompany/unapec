@@ -4200,7 +4200,7 @@
 
   "publication.page.options": "Options",
 
-  "publication.page.titleprefix": "Publication: ",
+  "publication.page.titleprefix": "Publication",
 
   "publication.page.volume-title": "Volume Title",
 
@@ -7389,4 +7389,12 @@
   "item.page.person.subjectInterest": "Areas of Interest",
 
   "item.page.person.shareProfile": "Share this Profile",
+
+  "item.page.dc.type": "Item Type",
+
+  "item.page.issn": "ISSN",
+
+  "item.page.language": "Language",
+
+  "footer.link.legacystatistics": "Legacy Statistics",
 }

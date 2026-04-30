@@ -38,6 +38,7 @@ yarn-error.log
 
 .env
 /nbproject/
+/reports/*
 
 junit.xml
 

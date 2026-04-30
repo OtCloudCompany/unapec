@@ -33,6 +33,13 @@
   "item.page.person.specialty": "Specialty",
   "item.page.person.subjectInterest": "Areas of Interest",
   "item.page.person.shareProfile": "Share this Profile",
+  "item.page.dc.type": "Item Type",
+  "item.page.citeThisItem": "Cite this Item ",
+  "item.page.bibliographicManagers": "Bibliographic Managers",
+  "item.page.selectFormat": "Select Citation Style",
+  "item.page.isbn": "ISBN",
+  "item.page.issn": "ISSN",
+  "item.page.language": "Language",
 
   "footer.link.dspace": "Universidad APEC, ",
   "footer.copyright": "Copyright © {{year}}. All rights reserved.",
@@ -42,12 +49,8 @@
   "footer.link.end-user-agreement": "End User Agreement",
   "footer.link.feedback": "Send Feedback",
   "footer.link.coar-notify-support": "COAR Notify Support",
+  "footer.link.legacystatistics": "Legacy Statistics",
   "footer.social-media.header": "Get the latest from our Social Media Platforms",
-
-  "item.page.citeThisItem": "Cite this Item ",
-  "item.page.bibliographicManagers": "Bibliographic Managers",
-  "item.page.selectFormat": "Select Citation Style",
-  "item.page.isbn": "ISBN",
 
   "menu.section.browse_global_communities_and_collections": "Explore Collections",
   "repository.title": "Repositorio de UNAPEC",
@@ -4238,7 +4241,7 @@
 
   "publication.page.options": "Options",
 
-  "publication.page.titleprefix": "Publication: ",
+  "publication.page.titleprefix": "Publication",
 
   "publication.page.volume-title": "Volume Title",
 

@@ -33,6 +33,7 @@
             [label]="'item.page.citation'" />
 
         <ds-generic-item-page-field [item]="object" [fields]="['dc.identifier.isbn']" [label]="'item.page.isbn'" />
+        <ds-generic-item-page-field [item]="object" [fields]="['dc.identifier.issn']" [label]="'item.page.issn'" />
 
         <ds-item-page-uri-field [item]="object" [fields]="['dc.identifier.uri']" [label]="'item.page.uri'">
         </ds-item-page-uri-field>
@@ -56,10 +57,23 @@
         <ds-item-page-date-field [item]="object"></ds-item-page-date-field>
         <ds-metadata-representation-list class="ds-item-page-mixed-author-field" [parentItem]="object"
             [itemType]="'Person'" [metadataFields]="['dc.contributor.author', 'dc.creator']"
-            [label]="'item.page.authors' | translate">
-        </ds-metadata-representation-list>
-        <ds-generic-item-page-field [item]="object" [fields]="['dc.publisher']" [label]="'item.page.publisher'">
-        </ds-generic-item-page-field>
+            [label]="'item.page.authors' | translate" />
+        <ds-generic-item-page-field [item]="object" [fields]="['dc.publisher']" [label]="'item.page.publisher'" />
+        <ds-generic-item-page-field [item]="object" [fields]="['dc.type']" [label]="'item.page.dc.type'" />
+        @if (object.hasMetadata(['dc.language.iso'])) {
+        <div class="item-page-field mb-2">
+            <div class="simple-view-element">
+                <h4 class="simple-view-element-header">{{ "item.page.language" | translate }}</h4>
+                @for (isoLanguage of object.allMetadataValues(['dc.language.iso']);
+                track $index; let last = $last) {
+                <span class="badge badge-pill bg-unapec-light-blue mx-1">
+                    {{ getLanguageName(isoLanguage) }}
+                </span>
+                @if (!last) { <span class="separator"> </span> }
+                }
+            </div>
+        </div>
+        }
         <ds-usage-metrics [item]="object"></ds-usage-metrics>
         <ds-item-page-collections [item]="object"></ds-item-page-collections>
         <ds-citation-generator [object]="object"></ds-citation-generator>
