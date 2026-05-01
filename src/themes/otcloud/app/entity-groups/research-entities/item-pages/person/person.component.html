@@ -12,7 +12,12 @@
         <div class="card profile-image mb-3">
             @if (!(mediaViewer.image || mediaViewer.video)) {
             <ds-metadata-field-wrapper [hideIfNoTextContent]="false">
-                <ds-thumbnail [thumbnail]="object?.thumbnail | async" [limitWidth]="false"></ds-thumbnail>
+                <ds-thumbnail [thumbnail]="object?.thumbnail | async" 
+                              [limitWidth]="false"
+                              [defaultImage]="'assets/images/person-placeholder.svg'"
+                              [alt]="'thumbnail.person.alt'"
+                              [placeholder]="'thumbnail.person.placeholder'">
+                </ds-thumbnail>
             </ds-metadata-field-wrapper>
             }
             <div class="card-footer pb-0 text-center">
