@@ -7378,7 +7378,7 @@
 
   "item.page.person.jobTitle": "Título profesional",
 
-  "item.page.person.knowsLanguage": "Áreas de interés",
+  "item.page.person.knowsLanguage": "Idiomas hablados",
 
   "item.page.person.phoneNumber": "Número de teléfono",
 
@@ -7397,4 +7397,58 @@
   "item.page.language": "Idioma",
 
   "footer.link.legacystatistics": "Estadísticas anteriores",
+
+  info: {
+
+  
+  "end-user-agreement": {
+
+  
+  
+  title: "End User Agreement",
+
+  
+  
+  accept: "I have read and I agree to the End User Agreement",
+
+  
+  
+  acceptError: "An error occurred accepting the End User Agreement",
+
+  
+  
+  acceptSuccess: "Successfully updated the End User Agreement",
+
+  
+  
+  breadcrumbs: "End User Agreement",
+
+  
+  
+  buttonsCancel: "Cancel",
+
+  
+  
+  buttonsSave: "Save",
+
+  
+  
+  head: "End User Agreement",
+
+  
+  
+  "hosting-country": "the United States",
+
+  
+  
+  lastupdated: "Last updated May 4, 2026",
+
+  
+  
+  content: "Your translated legal agreement text       <b>here</b>.",
+
+  
+  },
+
+  },
 }

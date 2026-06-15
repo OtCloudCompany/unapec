@@ -17,7 +17,7 @@
     }
 
     @if (reports) {
-      @for (report of reports; track report) {
+      @for (report of reports; track report.id) {
         <ds-statistics-table
           [report]="report"
           class="m-2 {{ report.id }}">

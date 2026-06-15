@@ -1,7 +1,9 @@
 import {
   Component,
   Input,
+  OnChanges,
   OnInit,
+  SimpleChanges,
 } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -20,7 +22,7 @@ import { UsageReport } from '../../core/statistics/models/usage-report.model';
     TranslateModule,
   ],
 })
-export class StatisticsTableComponent implements OnInit {
+export class StatisticsTableComponent implements OnInit, OnChanges {
 
   /**
    * The usage report to display a statistics table for
@@ -46,9 +48,21 @@ export class StatisticsTableComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.hasData = this.report.points.length > 0;
+    this.updateReportData();
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes.report && this.report) {
+      this.updateReportData();
+    }
+  }
+
+  private updateReportData(): void {
+    this.hasData = this.report?.points?.length > 0;
     if (this.hasData) {
       this.headers = Object.keys(this.report.points[0].values);
+    } else {
+      this.headers = [];
     }
   }
 }

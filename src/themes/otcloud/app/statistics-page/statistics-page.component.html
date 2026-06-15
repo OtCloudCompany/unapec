@@ -1,0 +1,98 @@
+<div class="container">
+
+  <div class="row mb-3">
+    <div class="col-md-6 mb-2">
+      <label for="statistics-start-date" class="form-label">Start date</label>
+      <div class="input-group">
+        <input
+          id="statistics-start-date"
+          name="statistics-start-date"
+          class="form-control"
+          ngbDatepicker
+          #startPicker="ngbDatepicker"
+          placeholder="yyyy-mm-dd"
+          [(ngModel)]="startDateModel"
+          [ngModelOptions]="{ standalone: true }" />
+        <button
+          type="button"
+          class="btn btn-outline-secondary"
+          aria-label="Toggle start date calendar"
+          (click)="startPicker.toggle()">
+          <i class="fas fa-calendar"></i>
+        </button>
+      </div>
+    </div>
+    <div class="col-md-6 mb-2">
+      <label for="statistics-end-date" class="form-label">End date</label>
+      <div class="input-group">
+        <input
+          id="statistics-end-date"
+          name="statistics-end-date"
+          class="form-control"
+          ngbDatepicker
+          #endPicker="ngbDatepicker"
+          placeholder="yyyy-mm-dd"
+          [(ngModel)]="endDateModel"
+          [ngModelOptions]="{ standalone: true }" />
+        <button
+          type="button"
+          class="btn btn-outline-secondary"
+          aria-label="Toggle end date calendar"
+          (click)="endPicker.toggle()">
+          <i class="fas fa-calendar"></i>
+        </button>
+      </div>
+    </div>
+    <div class="col-12 text-end">
+      <div class="btn-group" role="group" aria-label="Date range actions">
+        <button
+          type="button"
+          class="btn btn-outline-secondary"
+          (click)="clearDateRange()"
+          aria-label="Clear date range">
+          <i class="fas fa-times"></i>
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary"
+          (click)="applyDateRange()"
+          aria-label="Apply date range">
+          <i class="fas fa-sync-alt me-1"></i> Update
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <ng-container *ngVar="(scope$ | async) as scope">
+    @if (scope) {
+      <h1
+        class="header"
+        id="{{ scope.id }}">
+        {{ 'statistics.header' | translate: { scope: getName(scope) } }}
+      </h1>
+    }
+  </ng-container>
+
+  <ng-container *ngVar="reports$ | async as reports">
+
+    @if (!reports) {
+      <ds-loading></ds-loading>
+    }
+
+    @if (reports) {
+      @for (report of reports; track report) {
+        <ds-statistics-table
+          [report]="report"
+          class="m-2 {{ report.id }}">
+        </ds-statistics-table>
+      }
+      @if ((hasData$ | async) !== true) {
+        <div>
+          {{ 'statistics.page.no-data' | translate }}
+        </div>
+      }
+    }
+
+  </ng-container>
+
+</div>

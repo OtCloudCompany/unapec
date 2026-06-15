@@ -67,6 +67,23 @@
   "item.page.link.full": "All Metadata",
   "search.filters.applied.f.isAuthorOfPublication": "Author ID: ",
 
+  "info": {
+    "end-user-agreement": {
+      "title": "End User Agreement",
+      "accept": "I have read and I agree to the End User Agreement",
+      "acceptError": "An error occurred accepting the End User Agreement",
+      "acceptSuccess": "Successfully updated the End User Agreement",
+      "breadcrumbs": "End User Agreement",
+      "buttonsCancel": "Cancel",
+      "buttonsSave": "Save",
+      "head": "End User Agreement",
+      "hosting-country": "the United States",
+      "lastupdated": "Last updated May 4, 2026",
+      "content": "Your translated legal agreement text \
+      <b>here</b>."
+    }
+  },
+
   "footer.link.lyrasis": "LYRASIS",
 
   "401.help": "You're not authorized to access this page. You can use the button below to get back to the home page.",
@@ -2308,24 +2325,6 @@
   "info.accessibility-settings.submit": "Save accessibility settings",
 
   "info.accessibility-settings.title": "Accessibility settings",
-
-  "info.end-user-agreement.accept": "I have read and I agree to the End User Agreement",
-
-  "info.end-user-agreement.accept.error": "An error occurred accepting the End User Agreement",
-
-  "info.end-user-agreement.accept.success": "Successfully updated the End User Agreement",
-
-  "info.end-user-agreement.breadcrumbs": "End User Agreement",
-
-  "info.end-user-agreement.buttons.cancel": "Cancel",
-
-  "info.end-user-agreement.buttons.save": "Save",
-
-  "info.end-user-agreement.head": "End User Agreement",
-
-  "info.end-user-agreement.title": "End User Agreement",
-
-  "info.end-user-agreement.hosting-country": "the United States",
 
   "info.privacy.breadcrumbs": "Privacy Statement",
 

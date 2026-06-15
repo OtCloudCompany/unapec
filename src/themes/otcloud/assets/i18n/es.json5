@@ -30,13 +30,12 @@
   "item.page.person.knowsLanguage": "Lenguas",
   "item.page.person.phoneNumber": "Teléfono",
   "item.page.person.shortBio": "Perfil",
-  "item.page.person.knowsLanguage": "Áreas de interés",
+  "item.page.person.knowsLanguage": "Idiomas hablados",
   "item.page.person.phoneNumber": "Número de teléfono",
   "item.page.person.shortBio": "Breve biografía",
   "item.page.person.specialty": "Especialidad",
   "item.page.person.subjectInterest": "Áreas de interés",
   "item.page.person.specialty": "Especialidad",
-  "item.page.person.subjectInterest": "Áreas de interés",
   "item.page.person.shareProfile": "Compartir este perfil",
   "item.page.dc.type": "Tipo de artículo",
   "item.page.citeThisItem": "Citar esta publicación ",
@@ -73,6 +72,25 @@
   "search.filters.applied.f.isAuthorOfPublication": "ID de autor: ",
 
   "footer.link.lyrasis": "LYRASIS",
+
+  
+  "info": {
+    "end-user-agreement": {
+      "title": "End User Agreement",
+      "accept": "I have read and I agree to the End User Agreement",
+      "acceptError": "An error occurred accepting the End User Agreement",
+      "acceptSuccess": "Successfully updated the End User Agreement",
+      "breadcrumbs": "End User Agreement",
+      "buttonsCancel": "Cancel",
+      "buttonsSave": "Save",
+      "head": "End User Agreement",
+      "hosting-country": "the United States",
+      "lastupdated": "Last updated May 4, 2026",
+      "content": "Your translated legal agreement text \
+      <b>here</b>."
+    }
+  },
+
 
   // "401.help": "You're not authorized to access this page. You can use the button below to get back to the home page.",
   "401.help": "No está autorizado a acceder a esta página. Puede utilizar el botón de abajo para volver a la página de inicio.",
@@ -3453,31 +3471,31 @@
   "info.accessibility-settings.title": "Accessibility settings",
 
   // "info.end-user-agreement.accept": "I have read and I agree to the End User Agreement",
-  "info.end-user-agreement.accept": "He leído y acepto el Acuerdo de usuario final.",
+  // "info.end-user-agreement.accept": "He leído y acepto el Acuerdo de usuario final.",
 
   // "info.end-user-agreement.accept.error": "An error occurred accepting the End User Agreement",
-  "info.end-user-agreement.accept.error": "Se produjo un error al aceptar el Acuerdo de usuario final.",
+  // "info.end-user-agreement.accept.error": "Se produjo un error al aceptar el Acuerdo de usuario final.",
 
   // "info.end-user-agreement.accept.success": "Successfully updated the End User Agreement",
-  "info.end-user-agreement.accept.success": "Se actualizó correctamente el Acuerdo de usuario final.",
+  // "info.end-user-agreement.accept.success": "Se actualizó correctamente el Acuerdo de usuario final.",
 
   // "info.end-user-agreement.breadcrumbs": "End User Agreement",
-  "info.end-user-agreement.breadcrumbs": "Acuerdo de usuario final",
+  // "info.end-user-agreement.breadcrumbs": "Acuerdo de usuario final",
 
   // "info.end-user-agreement.buttons.cancel": "Cancel",
-  "info.end-user-agreement.buttons.cancel": "Cancelar",
+  // "info.end-user-agreement.buttons.cancel": "Cancelar",
 
   // "info.end-user-agreement.buttons.save": "Save",
-  "info.end-user-agreement.buttons.save": "Guardar",
+  // "info.end-user-agreement.buttons.save": "Guardar",
 
   // "info.end-user-agreement.head": "End User Agreement",
-  "info.end-user-agreement.head": "Acuerdo de usuario final",
+  // "info.end-user-agreement.head": "Acuerdo de usuario final",
 
   // "info.end-user-agreement.title": "End User Agreement",
-  "info.end-user-agreement.title": "Acuerdo de usuario final",
+  // "info.end-user-agreement.title": "Acuerdo de usuario final",
 
   // "info.end-user-agreement.hosting-country": "the United States",
-  "info.end-user-agreement.hosting-country": "los Estados Unidos de América",
+  // "info.end-user-agreement.hosting-country": "los Estados Unidos de América",
 
   // "info.privacy.breadcrumbs": "Privacy Statement",
   "info.privacy.breadcrumbs": "Declaracion de privacidad",

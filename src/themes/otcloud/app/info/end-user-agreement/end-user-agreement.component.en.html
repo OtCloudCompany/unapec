@@ -1,3 +1,8 @@
+<div class="container">
+  <h1>{{ 'info.end-user-agreement.head' | translate }}</h1>
+  <p><em>{{ 'info.end-user-agreement.lastupdated' | translate }}</em></p>
+  
+  
 
 <h2>Agreement to terms</h2>
 <p>These Terms of Use constitute a legally binding agreement made between you, whether personally or on behalf of an entity ("you") and {{ 'repository.title' | translate }} ("Company", "we", "us", or "our"), concerning your access to and use of this website as well as any other media form, media channel, mobile website or mobile application related, linked, or otherwise connected thereto (collectively, the "Site"). You agree that by accessing the Site, you have read, understood, and agreed to be bound by all of these Terms of Use and any future amendments thereof.</p>
@@ -91,3 +96,14 @@
 <p>These Terms of Use and any policies or operating rules posted by us on the Site or in respect to the Site constitute the entire agreement and understanding between you and us. Our failure to exercise or enforce any right or provision of these Terms of Use shall not operate as a waiver of such right or provision. These Terms of Use operate to the fullest extent permissible by law. We may assign any or all of our rights and obligations to others at any time. We shall not be responsible or liable for any loss, damage, delay, or failure to act caused by any cause beyond our reasonable control. If any provision or part of a provision of these Terms of Use is determined to be unlawful, void, or unenforceable, that provision or part of the provision is deemed severable from these Terms of Use and does not affect the validity and enforceability of any remaining provisions. There is no joint venture, partnership, employment or agency relationship created between you and us as a result of these Terms of Use or use of the Site. You agree that these Terms of Use will not be construed against us by virtue of having drafted them. You hereby waive any and all defenses you may have based on the electronic form of these Terms of Use and the lack of signing by the parties hereto to execute these Terms of Use.</p>
 
 <p><a class="link-contrast" [routerLink]="'.'" fragment="ref-a" id="comment-a">[a]</a>&nbsp;The DSpace software used to run this site is open source. Options for reuse and reproduction of the DSpace software is governed by its open source license: <a class="link-contrast" href="https://github.com/DSpace/DSpace/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">https://github.com/DSpace/DSpace/blob/main/LICENSE</a></p>
+
+  <form class="form-user-agreement-accept mt-4" (ngSubmit)="submit()" novalidate>
+    <input class="ms-1 me-2" type="checkbox" id="user-agreement-accept" [(ngModel)]="accepted" [ngModelOptions]="{standalone: true}">
+    <label class="col-form-label-lg" for="user-agreement-accept">{{ 'info.end-user-agreement.accept' | translate }}</label>
+
+    <div class="d-flex mt-4">
+      <button id="button-cancel" type="button" (click)="cancel()" class="btn btn-outline-secondary me-auto">{{ 'info.end-user-agreement.buttonsCancel' | translate }}</button>
+      <button id="button-save" type="submit" class="btn btn-primary" [dsBtnDisabled]="!accepted">{{ 'info.end-user-agreement.buttonsSave' | translate }}</button>
+    </div>
+  </form>
+</div>

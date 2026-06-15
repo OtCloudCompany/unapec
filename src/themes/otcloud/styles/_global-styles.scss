@@ -228,6 +228,7 @@ ds-recent-item-list .btn-link {
 }
 
 ds-item-search-result-list-element .item-list-title,
+ds-person-search-result-list-element a,
 ds-recent-item-list .item-list-title {
     color: var(--bs-heading-color) !important;
     font-weight: 500 !important;
@@ -317,4 +318,8 @@ span.bg-unapec-light-blue {
 
 .person-title .item-page-title-field {
     font-size: larger;
+}
+
+#sidebar-top-level-items-container a, #sidebar-collapse-toggle-container a{
+    color: white !important;
 }

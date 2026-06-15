@@ -26,8 +26,8 @@
         <ds-otcloud-description-field [item]="object"></ds-otcloud-description-field>
 
         <ds-generic-item-page-field [item]="object" [fields]="['dc.subject']" [separator]="', '"
-            [label]="'item.page.subject'">
-        </ds-generic-item-page-field>
+            [label]="'item.page.subject'" />
+
 
         <ds-generic-item-page-field [item]="object" [fields]="['dc.identifier.citation']"
             [label]="'item.page.citation'" />
@@ -39,7 +39,7 @@
         </ds-item-page-uri-field>
         <ds-item-page-cc-license-field [item]="object" [variant]="'full'">
         </ds-item-page-cc-license-field>
-        <ds-usage-statistics [object]="object"></ds-usage-statistics>
+        <ds-usage-statistics [object]="object" />
 
     </div>
     <div class="col-12 col-md-4 bg-light py-3">
