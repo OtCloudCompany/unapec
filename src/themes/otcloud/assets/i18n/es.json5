@@ -76,18 +76,22 @@
   
   "info": {
     "end-user-agreement": {
-      "title": "End User Agreement",
+      "title": "Acuerdo de usuario final",
       "accept": "I have read and I agree to the End User Agreement",
       "acceptError": "An error occurred accepting the End User Agreement",
       "acceptSuccess": "Successfully updated the End User Agreement",
-      "breadcrumbs": "End User Agreement",
+      "breadcrumbs": "Acuerdo de usuario final",
       "buttonsCancel": "Cancel",
       "buttonsSave": "Save",
-      "head": "End User Agreement",
+      "head": "Acuerdo de usuario final",
       "hosting-country": "the United States",
       "lastupdated": "Last updated May 4, 2026",
       "content": "Your translated legal agreement text \
       <b>here</b>."
+    },
+    "privacy": {
+      "head": "Declaracion de privacidad",
+      "breadcrumbs": "Declaracion de privacidad",
     }
   },
 
@@ -3501,7 +3505,6 @@
   "info.privacy.breadcrumbs": "Declaracion de privacidad",
 
   // "info.privacy.head": "Privacy Statement",
-  "info.privacy.head": "Declaracion de privacidad",
 
   // "info.privacy.title": "Privacy Statement",
   "info.privacy.title": "Declaracion de privacidad",

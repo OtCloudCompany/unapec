@@ -81,6 +81,10 @@
       "lastupdated": "Last updated May 4, 2026",
       "content": "Your translated legal agreement text \
       <b>here</b>."
+    },
+    "privacy": {
+      "head": "Privacy Statement",
+      "breadcrumbs": "Privacy Statement",
     }
   },
 
@@ -2325,10 +2329,6 @@
   "info.accessibility-settings.submit": "Save accessibility settings",
 
   "info.accessibility-settings.title": "Accessibility settings",
-
-  "info.privacy.breadcrumbs": "Privacy Statement",
-
-  "info.privacy.head": "Privacy Statement",
 
   "info.privacy.title": "Privacy Statement",
 

@@ -7405,7 +7405,7 @@
 
   
   
-  title: "End User Agreement",
+  title: "Acuerdo de usuario final",
 
   
   
@@ -7421,7 +7421,7 @@
 
   
   
-  breadcrumbs: "End User Agreement",
+  breadcrumbs: "Acuerdo de usuario final",
 
   
   
@@ -7433,7 +7433,7 @@
 
   
   
-  head: "End User Agreement",
+  head: "Acuerdo de usuario final",
 
   
   
@@ -7446,6 +7446,20 @@
   
   
   content: "Your translated legal agreement text       <b>here</b>.",
+
+  
+  },
+
+  
+  privacy: {
+
+  
+  
+  head: "Declaracion de privacidad",
+
+  
+  
+  breadcrumbs: "Declaracion de privacidad",
 
   
   },

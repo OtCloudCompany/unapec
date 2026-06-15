@@ -7450,5 +7450,19 @@
   
   },
 
+  
+  privacy: {
+
+  
+  
+  head: "Privacy Statement",
+
+  
+  
+  breadcrumbs: "Privacy Statement",
+
+  
+  },
+
   },
 }
