@@ -7378,7 +7378,7 @@
 
   "item.page.person.jobTitle": "Título profesional",
 
-  "item.page.person.knowsLanguage": "Idiomas hablados",
+  "item.page.person.knowsLanguage": "Idiomas que conoce",
 
   "item.page.person.phoneNumber": "Número de teléfono",
 
@@ -7409,15 +7409,15 @@
 
   
   
-  accept: "I have read and I agree to the End User Agreement",
+  accept: "He leído y acepto el Acuerdo de Usuario Final.",
 
   
   
-  acceptError: "An error occurred accepting the End User Agreement",
+  acceptError: "Se produjo un error al aceptar el Acuerdo de Usuario Final.",
 
   
   
-  acceptSuccess: "Successfully updated the End User Agreement",
+  acceptSuccess: "Se actualizó exitosamente el Acuerdo de usuario final",
 
   
   
@@ -7437,11 +7437,11 @@
 
   
   
-  "hosting-country": "the United States",
+  "hosting-country": "Estados Unidos",
 
   
   
-  lastupdated: "Last updated May 4, 2026",
+  lastupdated: "Última actualización: 4 de mayo de 2026",
 
   
   
@@ -7465,4 +7465,6 @@
   },
 
   },
+
+  "menu.about": "Acerca de",
 }

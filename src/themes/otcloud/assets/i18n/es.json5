@@ -4,6 +4,7 @@
   "item.version.history.table.item": "Publicación",
   "menu.section.edit_item": "Publicación",
   "menu.section.export_item": "Publicación",
+  "menu.about": "Acerca de",
   "homepage.community-list.item": "Elementos",
 
   "item.page.usageStatistics": "Estadísticas de uso",
@@ -30,7 +31,7 @@
   "item.page.person.knowsLanguage": "Lenguas",
   "item.page.person.phoneNumber": "Teléfono",
   "item.page.person.shortBio": "Perfil",
-  "item.page.person.knowsLanguage": "Idiomas hablados",
+  "item.page.person.knowsLanguage": "Idiomas que conoce",
   "item.page.person.phoneNumber": "Número de teléfono",
   "item.page.person.shortBio": "Breve biografía",
   "item.page.person.specialty": "Especialidad",
@@ -77,15 +78,15 @@
   "info": {
     "end-user-agreement": {
       "title": "Acuerdo de usuario final",
-      "accept": "I have read and I agree to the End User Agreement",
-      "acceptError": "An error occurred accepting the End User Agreement",
-      "acceptSuccess": "Successfully updated the End User Agreement",
+      "accept": "He leído y acepto el Acuerdo de Usuario Final.",
+      "acceptError": "Se produjo un error al aceptar el Acuerdo de Usuario Final.",
+      "acceptSuccess": "Se actualizó exitosamente el Acuerdo de usuario final",
       "breadcrumbs": "Acuerdo de usuario final",
       "buttonsCancel": "Cancel",
       "buttonsSave": "Save",
       "head": "Acuerdo de usuario final",
-      "hosting-country": "the United States",
-      "lastupdated": "Last updated May 4, 2026",
+      "hosting-country": "Estados Unidos",
+      "lastupdated": "Última actualización: 4 de mayo de 2026",
       "content": "Your translated legal agreement text \
       <b>here</b>."
     },

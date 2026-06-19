@@ -57,6 +57,8 @@ export const COAR_NOTIFY_SUPPORT = 'coar-notify-support';
 
 export const HOME_PAGE_PATH = 'home';
 
+export const ABOUT_US_PATH = 'about';
+
 export function getHomePageRoute() {
   return `/${HOME_PAGE_PATH}`;
 }

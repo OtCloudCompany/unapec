@@ -6,6 +6,7 @@ import {
 
 import { NOTIFICATIONS_MODULE_PATH } from './admin/admin-routing-paths';
 import {
+  ABOUT_US_PATH,
   ACCESS_CONTROL_MODULE_PATH,
   ADMIN_MODULE_PATH,
   BITSTREAM_MODULE_PATH,
@@ -44,6 +45,7 @@ import { PROCESS_MODULE_PATH } from './process-page/process-page-routing.paths';
 import { viewTrackerResolver } from './statistics/angulartics/dspace/view-tracker.resolver';
 import { provideSubmissionState } from './submission/provide-submission-state';
 import { SUGGESTION_MODULE_PATH } from './suggestions-page/suggestions-page-routing-paths';
+import { AboutUsComponent } from 'src/themes/otcloud/app/about-us/about-us.component';
 
 export const APP_ROUTES: Route[] = [
   { path: INTERNAL_SERVER_ERROR, component: ThemedPageInternalServerErrorComponent },
@@ -54,6 +56,7 @@ export const APP_ROUTES: Route[] = [
     canActivateChild: [ServerCheckGuard],
     children: [
       { path: '', redirectTo: '/home', pathMatch: 'full' },
+      { path: ABOUT_US_PATH, component: AboutUsComponent },
       {
         path: 'reload/:rnd',
         component: ThemedPageNotFoundComponent,
