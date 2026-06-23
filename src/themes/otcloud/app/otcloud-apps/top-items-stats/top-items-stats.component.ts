@@ -5,11 +5,13 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { RouterLink, ActivatedRoute } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgbDatepickerModule } from '@ng-bootstrap/ng-bootstrap';
-import { Subscription } from 'rxjs';
+import { Subscription, of, forkJoin } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { APP_CONFIG, AppConfig } from 'src/config/app-config.interface';
 import { DSpaceObjectDataService } from 'src/app/core/data/dspace-object-data.service';
 import { DSONameService } from 'src/app/core/breadcrumbs/dso-name.service';
 import { getFirstSucceededRemoteData } from 'src/app/core/shared/operators';
+
 
 export interface ItemStat {
   id: string;
@@ -182,6 +184,23 @@ export class TopItemsStatsComponent implements OnInit, OnDestroy {
           this.maxDownloads = 1;
         }
 
+        // Dynamically resolve missing titles
+        this.displayedStatsContent.forEach((item) => {
+          if (!item.label) {
+            this.dsoService.findById(item.id).pipe(
+              getFirstSucceededRemoteData()
+            ).subscribe((rd) => {
+              if (rd.hasSucceeded && rd.payload) {
+                item.label = this.dsoNameService.getName(rd.payload);
+                this.cdr.detectChanges();
+              } else {
+                item.label = 'Untitled Item';
+                this.cdr.detectChanges();
+              }
+            });
+          }
+        });
+
         this.isLoading = false;
         this.cdr.detectChanges();
       },
@@ -281,7 +300,27 @@ export class TopItemsStatsComponent implements OnInit, OnDestroy {
     this.http.get<StatsResponse>(url, { params }).subscribe({
       next: (response) => {
         const items = response.content || [];
-        this.triggerCSVDownload(items);
+        const obsList = items.map(item => {
+          if (!item.label) {
+            return this.dsoService.findById(item.id).pipe(
+              getFirstSucceededRemoteData(),
+              map(rd => {
+                if (rd.hasSucceeded && rd.payload) {
+                  item.label = this.dsoNameService.getName(rd.payload);
+                } else {
+                  item.label = 'Untitled Item';
+                }
+                return item;
+              })
+            );
+          } else {
+            return of(item);
+          }
+        });
+
+        forkJoin(obsList).subscribe((resolvedItems) => {
+          this.triggerCSVDownload(resolvedItems);
+        });
       },
       error: (err) => {
         console.error('Error fetching CSV data:', err);
@@ -291,12 +330,15 @@ export class TopItemsStatsComponent implements OnInit, OnDestroy {
 
   triggerCSVDownload(items: ItemStat[]): void {
     const headers = ['Rank', 'Title (ID)', 'Views', 'Downloads'];
-    const rows = items.map((item, index) => [
-      index + 1,
-      `"${item.label.replace(/"/g, '""')}" (${item.id})`,
-      item.views,
-      item.downloads
-    ]);
+    const rows = items.map((item, index) => {
+      const label = item.label || 'Untitled Item';
+      return [
+        index + 1,
+        `"${label.replace(/"/g, '""')}" (${item.id})`,
+        item.views,
+        item.downloads
+      ];
+    });
 
     const csvContent = [
       headers.join(','),
