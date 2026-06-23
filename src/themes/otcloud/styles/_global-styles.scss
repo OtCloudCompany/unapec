@@ -56,6 +56,10 @@ $danger: var(--unapec-red) !default;
     border-color: var(--unapec-blue) !important;
 }
 
+.bg-info {
+    background-color: var(--unapec-light-blue) !important;
+}
+
 body {
     font-family: "Avenir Next LT Pro", "Gotham", "Exo", "Montserrat", Arial, sans-serif !important;
 }
@@ -91,7 +95,7 @@ nav#main-navbar {
     color: white !important;
 
     .navbar-nav {
-    justify-content: flex-end !important;
+        justify-content: flex-end !important;
     }
 
     .ds-menu-item {
@@ -101,12 +105,14 @@ nav#main-navbar {
     a {
         color: white !important;
     }
-    
+
 }
+
 .dso-edit-menu-dropdown {
     background-color: var(--unapec-blue);
 
-    a, .dropdown-item {
+    a,
+    .dropdown-item {
         color: white !important;
     }
 
@@ -115,10 +121,12 @@ nav#main-navbar {
         background-color: var(--unapec-light-blue);
     }
 }
+
 #header-navbar-wrapper .dropdown-menu {
     background-color: var(--unapec-blue);
 
-    a, .dropdown-item {
+    a,
+    .dropdown-item {
         color: white !important;
     }
 
@@ -336,12 +344,15 @@ span.bg-unapec-light-blue {
     font-size: larger;
 }
 
-#sidebar-top-level-items-container a, #sidebar-collapse-toggle-container a{
+#sidebar-top-level-items-container a,
+#sidebar-collapse-toggle-container a {
     color: white !important;
 }
+
 #bibliographicManagers .zotero-img {
     width: 110px !important;
 }
+
 #main-navbar {
-  justify-content: flex-end !important;
+    justify-content: flex-end !important;
 }

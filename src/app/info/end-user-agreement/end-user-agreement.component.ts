@@ -26,7 +26,6 @@ import { EndUserAgreementService } from '../../core/end-user-agreement/end-user-
 import { BtnDisabledDirective } from '../../shared/btn-disabled.directive';
 import { isNotEmpty } from '../../shared/empty.util';
 import { NotificationsService } from '../../shared/notifications/notifications.service';
-import { EndUserAgreementContentComponent } from './end-user-agreement-content/end-user-agreement-content.component';
 
 @Component({
   selector: 'ds-base-end-user-agreement',
@@ -34,7 +33,6 @@ import { EndUserAgreementContentComponent } from './end-user-agreement-content/e
   styleUrls: ['./end-user-agreement.component.scss'],
   imports: [
     BtnDisabledDirective,
-    EndUserAgreementContentComponent,
     FormsModule,
     TranslateModule,
   ],
@@ -50,12 +48,12 @@ export class EndUserAgreementComponent implements OnInit {
   accepted = false;
 
   constructor(protected endUserAgreementService: EndUserAgreementService,
-              protected notificationsService: NotificationsService,
-              protected translate: TranslateService,
-              protected authService: AuthService,
-              protected store: Store<AppState>,
-              protected router: Router,
-              protected route: ActivatedRoute) {
+    protected notificationsService: NotificationsService,
+    protected translate: TranslateService,
+    protected authService: AuthService,
+    protected store: Store<AppState>,
+    protected router: Router,
+    protected route: ActivatedRoute) {
   }
 
   /**

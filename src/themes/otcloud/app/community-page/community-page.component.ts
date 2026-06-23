@@ -23,10 +23,8 @@ import { VarDirective } from '../../../../app/shared/utils/var.directive';
 
 @Component({
   selector: 'ds-themed-community-page',
-  // templateUrl: './community-page.component.html',
-  templateUrl: '../../../../app/community-page/community-page.component.html',
-  // styleUrls: ['./community-page.component.scss']
-  styleUrls: ['../../../../app/community-page/community-page.component.scss'],
+  templateUrl: './community-page.component.html',
+  styleUrls: ['./community-page.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [fadeInOut],
   imports: [

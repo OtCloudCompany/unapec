@@ -56,7 +56,7 @@ export const APP_ROUTES: Route[] = [
     canActivateChild: [ServerCheckGuard],
     children: [
       { path: '', redirectTo: '/home', pathMatch: 'full' },
-      { path: ABOUT_US_PATH, component: AboutUsComponent },
+      { path: ABOUT_US_PATH, component: AboutUsComponent, pathMatch: 'full' },
       {
         path: 'reload/:rnd',
         component: ThemedPageNotFoundComponent,
@@ -164,6 +164,12 @@ export const APP_ROUTES: Route[] = [
         path: 'legacy-statistics',
         loadComponent: () => import('../themes/otcloud/app/otcloud-apps/legacy-statistics/legacy-statistics.component')
           .then((m) => m.LegacyStatisticsComponent),
+        canActivate: [endUserAgreementCurrentUserGuard],
+      },
+      {
+        path: 'top-items-stats/:uuid',
+        loadComponent: () => import('../themes/otcloud/app/otcloud-apps/top-items-stats/top-items-stats.component')
+          .then((m) => m.TopItemsStatsComponent),
         canActivate: [endUserAgreementCurrentUserGuard],
       },
       {

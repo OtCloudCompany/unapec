@@ -7467,4 +7467,42 @@
   },
 
   "menu.about": "About",
+
+  "item.page.topItems.title": "{{name}} Usage Statistics",
+
+  "item.page.topItems.startDate": "Start Date",
+
+  "item.page.topItems.endDate": "End Date",
+
+  "item.page.topItems.apply": "Apply",
+
+  "item.page.topItems.reset": "Reset",
+
+  "item.page.topItems.total": "Total Items",
+
+  "item.page.topItems.perPage": "Items per page",
+
+  "item.page.topItems.filter": "Update",
+
+  "item.page.topItems.itemLabel": "Title",
+
+  "item.page.topItems.views": "Views",
+
+  "item.page.topItems.downloads": "Downloads",
+
+  "item.page.topItems.showing": "Showing",
+
+  "item.page.topItems.to": "to",
+
+  "item.page.topItems.of": "of",
+
+  "item.page.topItems.entries": "entries",
+
+  "item.page.topItems.noData": "No usage statistics available for this collection/community.",
+
+  "item.page.topItems.downloadCsv": "Download all items as CSV",
+
+  "community.page.topItemsStats": "View usage statistics",
+
+  "collection.page.topItemsStats": "View usage statistics",
 }
