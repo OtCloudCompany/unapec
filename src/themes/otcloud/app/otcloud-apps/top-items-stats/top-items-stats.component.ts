@@ -52,7 +52,7 @@ export class TopItemsStatsComponent implements OnInit, OnDestroy {
   maxDownloads = 1;
 
   currentPage = 0;
-  pageSize = 5; // default local page size
+  pageSize = 20; // default local page size
   totalElements = 0;
   totalPages = 1;
 
@@ -308,7 +308,7 @@ export class TopItemsStatsComponent implements OnInit, OnDestroy {
     if (link.download !== undefined) {
       const url = URL.createObjectURL(blob);
       link.setAttribute('href', url);
-      
+
       const cleanName = this.resolvedObjectName ? this.resolvedObjectName.replace(/[^a-zA-Z0-9]/g, '_') : 'Collection';
       const dateStr = new Date().toISOString().split('T')[0];
       link.setAttribute('download', `Usage_Statistics_${cleanName}_${dateStr}.csv`);
