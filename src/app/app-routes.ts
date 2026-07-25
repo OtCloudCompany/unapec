@@ -179,6 +179,18 @@ export const APP_ROUTES: Route[] = [
         canActivate: [siteAdministratorGuard, endUserAgreementCurrentUserGuard],
       },
       {
+        path: 'usage-dashboard/:uuid',
+        loadComponent: () => import('../themes/otcloud/app/otcloud-apps/usage-dashboard/usage-dashboard.component')
+          .then((m) => m.UsageDashboardComponent),
+        canActivate: [endUserAgreementCurrentUserGuard],
+      },
+      {
+        path: 'metadata-usage/:uuid',
+        loadComponent: () => import('../themes/otcloud/app/otcloud-apps/metadata-usage/metadata-usage.component')
+          .then((m) => m.MetadataUsageComponent),
+        canActivate: [endUserAgreementCurrentUserGuard],
+      },
+      {
         path: 'browse',
         loadChildren: () => import('./browse-by/browse-by-page-routes')
           .then((m) => m.ROUTES),

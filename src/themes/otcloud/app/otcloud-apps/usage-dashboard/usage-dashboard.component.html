@@ -1,0 +1,130 @@
+<div class="container usage-dashboard">
+  <h2>{{ 'otcloud.usage-dashboard.title' | translate }}</h2>
+  @if (resolvedObjectName) {
+    <p class="text-muted">{{ resolvedObjectName }}</p>
+  }
+
+  <form [formGroup]="filterForm" (ngSubmit)="onSubmit()" class="row g-2 align-items-end mb-4">
+    <div class="col-auto">
+      <label class="form-label" for="usage-dashboard-start">{{ 'otcloud.usage-dashboard.start-date' | translate }}</label>
+      <input id="usage-dashboard-start" class="form-control" type="date" formControlName="startDate">
+    </div>
+    <div class="col-auto">
+      <label class="form-label" for="usage-dashboard-end">{{ 'otcloud.usage-dashboard.end-date' | translate }}</label>
+      <input id="usage-dashboard-end" class="form-control" type="date" formControlName="endDate">
+    </div>
+    <div class="col-auto">
+      <label class="form-label" for="usage-dashboard-gap">{{ 'otcloud.usage-dashboard.interval' | translate }}</label>
+      <select id="usage-dashboard-gap" class="form-select" formControlName="gap">
+        <option value="day">{{ 'otcloud.usage-dashboard.interval.day' | translate }}</option>
+        <option value="month">{{ 'otcloud.usage-dashboard.interval.month' | translate }}</option>
+        <option value="year">{{ 'otcloud.usage-dashboard.interval.year' | translate }}</option>
+      </select>
+    </div>
+    <div class="col-auto">
+      <button class="btn btn-primary" type="submit" [disabled]="isLoading">
+        {{ 'otcloud.usage-dashboard.apply' | translate }}
+      </button>
+    </div>
+  </form>
+
+  @if (validationError) {
+    <div class="alert alert-warning">{{ validationError }}</div>
+  }
+  @if (errorMessage) {
+    <div class="alert alert-danger">{{ errorMessage }}</div>
+  }
+
+  @if (isLoading) {
+    <div class="d-flex align-items-center gap-2 my-3">
+      <div class="spinner-border spinner-border-sm" role="status"></div>
+      <span>{{ 'otcloud.usage-dashboard.loading' | translate }}</span>
+    </div>
+  }
+
+  @if (dashboard) {
+    <div class="row g-3 mb-4">
+      <div class="col-sm-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <div class="stat-value">{{ dashboard.views }}</div>
+            <div class="stat-label">{{ 'otcloud.usage-dashboard.views' | translate }}</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <div class="stat-value">{{ dashboard.downloads }}</div>
+            <div class="stat-label">{{ 'otcloud.usage-dashboard.downloads' | translate }}</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <div class="stat-value">{{ dashboard.itemsViewed }}</div>
+            <div class="stat-label">{{ 'otcloud.usage-dashboard.items-viewed' | translate }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    @if (chartOptions) {
+      <div class="card mb-4">
+        <div class="card-header">{{ 'otcloud.usage-dashboard.over-time' | translate }}</div>
+        <div class="card-body">
+          <highcharts-chart [Highcharts]="Highcharts"
+                            [options]="chartOptions"
+                            style="width: 100%; height: 320px; display: block;">
+          </highcharts-chart>
+        </div>
+      </div>
+    }
+
+    <div class="row g-3">
+      <div class="col-md-6">
+        <div class="card h-100">
+          <div class="card-header">{{ 'otcloud.usage-dashboard.top-countries' | translate }}</div>
+          <div class="card-body p-0">
+            @if (dashboard.topCountries?.length) {
+              <table class="table table-sm table-striped mb-0">
+                <tbody>
+                  @for (row of dashboard.topCountries.slice(0, 10); track row.label) {
+                    <tr>
+                      <td>{{ row.label }}</td>
+                      <td class="text-end">{{ row.views }}</td>
+                    </tr>
+                  }
+                </tbody>
+              </table>
+            } @else {
+              <div class="p-3 text-muted">{{ 'otcloud.usage-dashboard.no-data' | translate }}</div>
+            }
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card h-100">
+          <div class="card-header">{{ 'otcloud.usage-dashboard.top-cities' | translate }}</div>
+          <div class="card-body p-0">
+            @if (dashboard.topCities?.length) {
+              <table class="table table-sm table-striped mb-0">
+                <tbody>
+                  @for (row of dashboard.topCities.slice(0, 10); track row.label) {
+                    <tr>
+                      <td>{{ row.label }}</td>
+                      <td class="text-end">{{ row.views }}</td>
+                    </tr>
+                  }
+                </tbody>
+              </table>
+            } @else {
+              <div class="p-3 text-muted">{{ 'otcloud.usage-dashboard.no-data' | translate }}</div>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+</div>

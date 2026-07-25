@@ -1,0 +1,15 @@
+.usage-dashboard {
+  padding-top: var(--bs-spacer, 1rem);
+  padding-bottom: var(--bs-spacer, 1rem);
+
+  .stat-value {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.1;
+  }
+
+  .stat-label {
+    color: var(--bs-secondary-color, #6c757d);
+    font-size: 0.9rem;
+  }
+}

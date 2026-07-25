@@ -992,6 +992,80 @@
 
   "otcloud.staff-activity.table.records": "Audit records",
 
+  // Usage dashboard (UNAPEC extension)
+  "otcloud.usage-dashboard.title": "Usage Dashboard",
+
+  "otcloud.usage-dashboard.start-date": "Start date",
+
+  "otcloud.usage-dashboard.end-date": "End date",
+
+  "otcloud.usage-dashboard.interval": "Interval",
+
+  "otcloud.usage-dashboard.interval.day": "Daily",
+
+  "otcloud.usage-dashboard.interval.month": "Monthly",
+
+  "otcloud.usage-dashboard.interval.year": "Yearly",
+
+  "otcloud.usage-dashboard.apply": "Apply",
+
+  "otcloud.usage-dashboard.loading": "Loading usage dashboard...",
+
+  "otcloud.usage-dashboard.views": "Item views",
+
+  "otcloud.usage-dashboard.downloads": "File downloads",
+
+  "otcloud.usage-dashboard.items-viewed": "Distinct items viewed",
+
+  "otcloud.usage-dashboard.over-time": "Views and downloads over time",
+
+  "otcloud.usage-dashboard.top-countries": "Top countries",
+
+  "otcloud.usage-dashboard.top-cities": "Top cities",
+
+  "otcloud.usage-dashboard.no-data": "No usage recorded for this period.",
+
+  // Usage by metadata field (UNAPEC extension)
+  "otcloud.metadata-usage.title": "Usage by Metadata Field",
+
+  "otcloud.metadata-usage.field": "Group by",
+
+  "otcloud.metadata-usage.field.author": "Author",
+
+  "otcloud.metadata-usage.field.subject": "Subject",
+
+  "otcloud.metadata-usage.field.type": "Type",
+
+  "otcloud.metadata-usage.field.publisher": "Publisher",
+
+  "otcloud.metadata-usage.field.language": "Language",
+
+  "otcloud.metadata-usage.start-date": "Start date",
+
+  "otcloud.metadata-usage.end-date": "End date",
+
+  "otcloud.metadata-usage.apply": "Apply",
+
+  "otcloud.metadata-usage.export-csv": "Export CSV",
+
+  "otcloud.metadata-usage.loading": "Loading usage by metadata...",
+
+  "otcloud.metadata-usage.no-data": "No usage recorded for this metadata field.",
+
+  "otcloud.metadata-usage.truncated": "These figures cover the {{ count }} most viewed items in scope, not every item, so they are a lower bound rather than repository-wide totals. Raise otcloud-statistics.metadata-table.max-items on the server for more complete figures.",
+
+  "otcloud.metadata-usage.total": "{{ count }} value(s)",
+
+  "otcloud.metadata-usage.page-size": "Per page",
+
+  "otcloud.metadata-usage.table.value": "Value",
+
+  "otcloud.metadata-usage.table.views": "Views",
+
+  "otcloud.metadata-usage.table.downloads": "Downloads",
+
+  "otcloud.metadata-usage.table.items": "Items",
+
   "auth.errors.invalid-user": "Invalid email address or password.",
 
   "auth.messages.expired": "Your session has expired. Please log in again.",
