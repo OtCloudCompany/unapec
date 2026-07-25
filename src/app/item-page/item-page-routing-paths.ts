@@ -55,3 +55,5 @@ export const UPLOAD_BITSTREAM_PATH = 'bitstreams/new';
 export const ORCID_PATH = 'orcid';
 
 export const ITEM_ACCESS_BY_TOKEN_PATH = 'access-by-token';
+
+export const ITEM_AUDIT_LOGS_PATH = 'auditlogs';

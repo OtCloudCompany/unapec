@@ -19,6 +19,7 @@ import {
   SUBMISSION_FORMS_TYPE,
   SUBMISSION_UPLOADS_TYPE,
 } from './config/models/config-type';
+import { AUDIT } from './audit/model/audit.resource-type';
 import { ROOT } from './data/root.resource-type';
 import { EPERSON } from './eperson/models/eperson.resource-type';
 import { GROUP } from './eperson/models/group.resource-type';
@@ -70,6 +71,7 @@ import { POOL_TASK } from './tasks/models/pool-task-object.resource-type';
 import { WORKFLOW_ACTION } from './tasks/models/workflow-action-object.resource-type';
 
 export const LAZY_DATA_SERVICES: LazyDataServicesMap = new Map([
+  [AUDIT.value, () => import('./data/audit-data.service').then(m => m.AuditDataService)],
   [AUTHORIZATION.value, () => import('./data/feature-authorization/authorization-data.service').then(m => m.AuthorizationDataService)],
   [BROWSE_DEFINITION.value, () => import('./browse/browse-definition-data.service').then(m => m.BrowseDefinitionDataService)],
   [BULK_ACCESS_CONDITION_OPTIONS.value, () => import('./config/bulk-access-config-data.service').then(m => m.BulkAccessConfigDataService)],

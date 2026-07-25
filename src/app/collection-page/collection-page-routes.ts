@@ -1,5 +1,6 @@
 import { Route } from '@angular/router';
 
+import { ObjectAuditLogsComponent } from '../audit-page/object-audit-overview/object-audit-logs.component';
 import { browseByGuard } from '../browse-by/browse-by-guard';
 import { browseByI18nBreadcrumbResolver } from '../browse-by/browse-by-i18n-breadcrumb.resolver';
 import { authenticatedGuard } from '../core/auth/authenticated.guard';
@@ -77,6 +78,14 @@ export const ROUTES: Route[] = [
           breadcrumb: i18nBreadcrumbResolver,
         },
         data: { title: 'collection.edit.template.title', breadcrumbKey: 'collection.edit.template' },
+      },
+      {
+        path: 'auditlogs',
+        component: ObjectAuditLogsComponent,
+        data: { title: 'audit.object.title', breadcrumbKey: 'audit.object' },
+        resolve: {
+          breadcrumb: i18nBreadcrumbResolver,
+        },
       },
       {
         path: '',

@@ -1,8 +1,10 @@
 import { Route } from '@angular/router';
 
 import { REQUEST_COPY_MODULE_PATH } from '../app-routing-paths';
+import { ObjectAuditLogsComponent } from '../audit-page/object-audit-overview/object-audit-logs.component';
 import { accessTokenResolver } from '../core/auth/access-token.resolver';
 import { authenticatedGuard } from '../core/auth/authenticated.guard';
+import { i18nBreadcrumbResolver } from '../core/breadcrumbs/i18n-breadcrumb.resolver';
 import { itemBreadcrumbResolver } from '../core/breadcrumbs/item-breadcrumb.resolver';
 import { MenuRoute } from '../shared/menu/menu-route.model';
 import { viewTrackerResolver } from '../statistics/angulartics/dspace/view-tracker.resolver';
@@ -12,6 +14,7 @@ import { ThemedFullItemPageComponent } from './full/themed-full-item-page.compon
 import { itemPageResolver } from './item-page.resolver';
 import {
   ITEM_ACCESS_BY_TOKEN_PATH,
+  ITEM_AUDIT_LOGS_PATH,
   ITEM_EDIT_PATH,
   ORCID_PATH,
   UPLOAD_BITSTREAM_PATH,
@@ -77,6 +80,14 @@ export const ROUTES: Route[] = [
         component: ThemedFullItemPageComponent,
         resolve: {
           menu: accessTokenResolver,
+        },
+      },
+      {
+        path: ITEM_AUDIT_LOGS_PATH,
+        component: ObjectAuditLogsComponent,
+        data: { title: 'audit.object.title', breadcrumbKey: 'audit.object' },
+        resolve: {
+          breadcrumb: i18nBreadcrumbResolver,
         },
       },
     ],

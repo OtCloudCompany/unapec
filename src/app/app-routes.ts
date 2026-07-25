@@ -173,6 +173,12 @@ export const APP_ROUTES: Route[] = [
         canActivate: [endUserAgreementCurrentUserGuard],
       },
       {
+        path: 'staff-activity',
+        loadComponent: () => import('../themes/otcloud/app/otcloud-apps/staff-activity/staff-activity.component')
+          .then((m) => m.StaffActivityComponent),
+        canActivate: [siteAdministratorGuard, endUserAgreementCurrentUserGuard],
+      },
+      {
         path: 'browse',
         loadChildren: () => import('./browse-by/browse-by-page-routes')
           .then((m) => m.ROUTES),
@@ -183,6 +189,12 @@ export const APP_ROUTES: Route[] = [
         loadChildren: () => import('./admin/admin-routes')
           .then((m) => m.ROUTES),
         data: { enableRSS: true },
+        canActivate: [siteAdministratorGuard, endUserAgreementCurrentUserGuard],
+      },
+      {
+        path: 'auditlogs',
+        loadChildren: () => import('./audit-page/audit-page-routes')
+          .then((m) => m.ROUTES),
         canActivate: [siteAdministratorGuard, endUserAgreementCurrentUserGuard],
       },
       {

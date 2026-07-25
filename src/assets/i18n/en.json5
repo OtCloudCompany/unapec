@@ -900,6 +900,98 @@
 
   "admin.batch-import.page.remove": "remove",
 
+  // Audit trail (backported from DSpace 10)
+  "audit.data.not-found": "No audits found.",
+
+  "audit.data.self": "self",
+
+  "audit.detail.metadata.field": "Metadata field:",
+
+  "audit.detail.metadata.value": "Value:",
+
+  "audit.detail.metadata.authority": "Authority:",
+
+  "audit.detail.metadata.confidence": "Confidence:",
+
+  "audit.detail.metadata.place": "Place:",
+
+  "audit.detail.metadata.action": "Action:",
+
+  "audit.detail.metadata.checksum": "Checksum:",
+
+  "audit.overview.title": "All Audit Logs",
+
+  "audit.overview.table.id": "Audit ID",
+
+  "audit.overview.table.objectUUID": "Object ID",
+
+  "audit.overview.table.objectType": "Object Type",
+
+  "audit.overview.table.subjectUUID": "Subject ID",
+
+  "audit.overview.table.subjectType": "Subject Type",
+
+  "audit.overview.table.entityType": "Audit Type",
+
+  "audit.overview.table.eperson": "EPerson",
+
+  "audit.overview.table.other": "Object",
+
+  "audit.overview.table.timestamp": "Time (UTC)",
+
+  "audit.overview.breadcrumbs": "Audit Logs",
+
+  "audit.object.back": "Back",
+
+  "audit.object.breadcrumbs": "Object Audit Logs",
+
+  "audit.object.overview.title": "Object Audit Logs",
+
+  "audit.object.logs.label": "Logs for object: ",
+
+  "audit.object.overview.disabled.message": "Audit feature is currently disabled",
+
+  "context-menu.actions.audit-item.btn": "Audit",
+
+  "menu.section.audit": "Audit Logs",
+
+  // Staff activity report (UNAPEC extension over the audit trail)
+  "otcloud.staff-activity.title": "Staff Activity",
+
+  "otcloud.staff-activity.description": "Items created, archived, edited or deleted by each staff member. Counts are of distinct objects, not of audit records.",
+
+  "otcloud.staff-activity.start-date": "Start date",
+
+  "otcloud.staff-activity.end-date": "End date",
+
+  "otcloud.staff-activity.apply": "Apply",
+
+  "otcloud.staff-activity.reset": "Reset",
+
+  "otcloud.staff-activity.export-csv": "Export CSV",
+
+  "otcloud.staff-activity.loading": "Loading staff activity...",
+
+  "otcloud.staff-activity.no-data": "No staff activity recorded for this period. If this is unexpected, check that auditing is enabled on the server (audit.enabled).",
+
+  "otcloud.staff-activity.total": "{{ count }} staff member(s)",
+
+  "otcloud.staff-activity.page-size": "Per page",
+
+  "otcloud.staff-activity.table.staff": "Staff member",
+
+  "otcloud.staff-activity.table.created": "Created",
+
+  "otcloud.staff-activity.table.archived": "Archived",
+
+  "otcloud.staff-activity.table.edited": "Edited",
+
+  "otcloud.staff-activity.table.deleted": "Deleted",
+
+  "otcloud.staff-activity.table.files": "Files added",
+
+  "otcloud.staff-activity.table.records": "Audit records",
+
   "auth.errors.invalid-user": "Invalid email address or password.",
 
   "auth.messages.expired": "Your session has expired. Please log in again.",
