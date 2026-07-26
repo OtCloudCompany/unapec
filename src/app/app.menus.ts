@@ -31,6 +31,7 @@ import { NewMenuProvider } from './shared/menu/providers/new.menu';
 import { NotificationsMenuProvider } from './shared/menu/providers/notifications.menu';
 import { ProcessesMenuProvider } from './shared/menu/providers/processes.menu';
 import { RegistriesMenuProvider } from './shared/menu/providers/registries.menu';
+import { StaffActivityMenuProvider } from './shared/menu/providers/staff-activity.menu';
 import { StatisticsMenuProvider } from './shared/menu/providers/statistics.menu';
 import { SystemWideAlertMenuProvider } from './shared/menu/providers/system-wide-alert.menu';
 import { WithdrawnReinstateItemMenuProvider } from './shared/menu/providers/withdrawn-reinstate-item.menu';
@@ -75,6 +76,7 @@ export const MENUS = buildMenuStructure({
     SystemWideAlertMenuProvider,
     CoarNotifyMenuProvider,
     AuditOverviewMenuProvider,
+    StaffActivityMenuProvider,
   ],
   [MenuID.DSO_EDIT]: [
     DsoOptionMenuProvider.withSubs([

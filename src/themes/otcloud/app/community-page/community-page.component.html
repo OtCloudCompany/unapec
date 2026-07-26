@@ -27,6 +27,12 @@
               <a class="btn btn-outline-primary" [routerLink]="['/top-items-stats', communityPayload.id]" role="button">
                 <i class="fas fa-chart-bar" aria-hidden="true"></i> {{ 'community.page.topItemsStats' | translate }}
               </a>
+              <a class="btn btn-outline-primary" [routerLink]="['/usage-dashboard', communityPayload.id]" role="button">
+                <i class="fas fa-chart-line" aria-hidden="true"></i> {{ 'community.page.usageDashboard' | translate }}
+              </a>
+              <a class="btn btn-outline-primary" [routerLink]="['/metadata-usage', communityPayload.id]" role="button">
+                <i class="fas fa-tags" aria-hidden="true"></i> {{ 'community.page.metadataUsage' | translate }}
+              </a>
               <ds-dso-edit-menu></ds-dso-edit-menu>
             </div>
           </div>

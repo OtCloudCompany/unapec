@@ -955,6 +955,16 @@
 
   "menu.section.audit": "Audit Logs",
 
+  "menu.section.staff-activity": "Staff Activity",
+
+  "community.page.usageDashboard": "Usage Dashboard",
+
+  "community.page.metadataUsage": "Usage by Metadata",
+
+  "collection.page.usageDashboard": "Usage Dashboard",
+
+  "collection.page.metadataUsage": "Usage by Metadata",
+
   // Staff activity report (UNAPEC extension over the audit trail)
   "otcloud.staff-activity.title": "Staff Activity",
 
