@@ -36,15 +36,22 @@
                 </ds-comcol-page-content>
               </header>
               <div class="d-flex align-items-center gap-2 flex-shrink-0">
-                <a class="btn btn-outline-primary" [routerLink]="['/top-items-stats', collection.id]" role="button">
-                  <i class="fas fa-chart-bar" aria-hidden="true"></i> {{ 'collection.page.topItemsStats' | translate }}
-                </a>
-                <a class="btn btn-outline-primary" [routerLink]="['/usage-dashboard', collection.id]" role="button">
-                  <i class="fas fa-chart-line" aria-hidden="true"></i> {{ 'collection.page.usageDashboard' | translate }}
-                </a>
-                <a class="btn btn-outline-primary" [routerLink]="['/metadata-usage', collection.id]" role="button">
-                  <i class="fas fa-tags" aria-hidden="true"></i> {{ 'collection.page.metadataUsage' | translate }}
-                </a>
+                <div class="btn-group" ngbDropdown container="body" placement="bottom-right bottom-left top-right top-left">
+                  <button class="btn btn-outline-primary" id="collectionStatisticsDropdown" ngbDropdownToggle type="button">
+                    <i class="fas fa-chart-bar" aria-hidden="true"></i> {{ 'collection.page.statistics' | translate }}
+                  </button>
+                  <div ngbDropdownMenu aria-labelledby="collectionStatisticsDropdown">
+                    <a ngbDropdownItem [routerLink]="['/top-items-stats', collection.id]">
+                      <i class="fas fa-chart-bar" aria-hidden="true"></i> {{ 'collection.page.topItemsStats' | translate }}
+                    </a>
+                    <a ngbDropdownItem [routerLink]="['/usage-dashboard', collection.id]">
+                      <i class="fas fa-chart-line" aria-hidden="true"></i> {{ 'collection.page.usageDashboard' | translate }}
+                    </a>
+                    <a ngbDropdownItem [routerLink]="['/metadata-usage', collection.id]">
+                      <i class="fas fa-tags" aria-hidden="true"></i> {{ 'collection.page.metadataUsage' | translate }}
+                    </a>
+                  </div>
+                </div>
                 <ds-dso-edit-menu></ds-dso-edit-menu>
               </div>
             </div>

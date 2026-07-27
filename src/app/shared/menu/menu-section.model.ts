@@ -69,4 +69,11 @@ export interface MenuSection {
    * This section will not be rendered when it has no visible children
    */
   alwaysRenderExpandable?: boolean;
+
+  /**
+   * When true, an expandable navbar section's dropdown is right-aligned (Bootstrap's
+   * `dropdown-menu-end`) instead of the default left alignment. Only meaningful on a section that
+   * is itself rendered as a dropdown toggle, e.g. one with {@link alwaysRenderExpandable} set.
+   */
+  dropdownAlignEnd?: boolean;
 }

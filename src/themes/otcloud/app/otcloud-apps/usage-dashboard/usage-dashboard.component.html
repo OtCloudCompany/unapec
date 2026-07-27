@@ -7,11 +7,13 @@
   <form [formGroup]="filterForm" (ngSubmit)="onSubmit()" class="row g-2 align-items-end mb-4">
     <div class="col-auto">
       <label class="form-label" for="usage-dashboard-start">{{ 'otcloud.usage-dashboard.start-date' | translate }}</label>
-      <input id="usage-dashboard-start" class="form-control" type="date" formControlName="startDate">
+      <input id="usage-dashboard-start" class="form-control" placeholder="yyyy-mm-dd" formControlName="startDate"
+        ngbDatepicker #usageDashboardDStart="ngbDatepicker" (click)="usageDashboardDStart.toggle()">
     </div>
     <div class="col-auto">
       <label class="form-label" for="usage-dashboard-end">{{ 'otcloud.usage-dashboard.end-date' | translate }}</label>
-      <input id="usage-dashboard-end" class="form-control" type="date" formControlName="endDate">
+      <input id="usage-dashboard-end" class="form-control" placeholder="yyyy-mm-dd" formControlName="endDate"
+        ngbDatepicker #usageDashboardDEnd="ngbDatepicker" (click)="usageDashboardDEnd.toggle()">
     </div>
     <div class="col-auto">
       <label class="form-label" for="usage-dashboard-gap">{{ 'otcloud.usage-dashboard.interval' | translate }}</label>
@@ -84,7 +86,7 @@
 
     <div class="row g-3">
       <div class="col-md-6">
-        <div class="card h-100">
+        <div class="card h-100" id="usage-dashboard-top-countries">
           <div class="card-header">{{ 'otcloud.usage-dashboard.top-countries' | translate }}</div>
           <div class="card-body p-0">
             @if (dashboard.topCountries?.length) {

@@ -32,8 +32,8 @@ import { NotificationsMenuProvider } from './shared/menu/providers/notifications
 import { ProcessesMenuProvider } from './shared/menu/providers/processes.menu';
 import { RegistriesMenuProvider } from './shared/menu/providers/registries.menu';
 import { StaffActivityMenuProvider } from './shared/menu/providers/staff-activity.menu';
-import { StatisticsMenuProvider } from './shared/menu/providers/statistics.menu';
 import { SystemWideAlertMenuProvider } from './shared/menu/providers/system-wide-alert.menu';
+import { UsageStatisticsMenuProvider } from './shared/menu/providers/usage-statistics.menu';
 import { WithdrawnReinstateItemMenuProvider } from './shared/menu/providers/withdrawn-reinstate-item.menu';
 import { WorkflowMenuProvider } from './shared/menu/providers/workflow.menu';
 
@@ -57,7 +57,9 @@ export const MENUS = buildMenuStructure({
   [MenuID.PUBLIC]: [
     CommunityListMenuProvider,
     BrowseMenuProvider,
-    StatisticsMenuProvider,
+    // Replaces the stock StatisticsMenuProvider: same context-awareness, but a dropdown offering
+    // top items, authors, subjects and types rather than a single link.
+    UsageStatisticsMenuProvider,
   ],
   [MenuID.ADMIN]: [
     NewMenuProvider,

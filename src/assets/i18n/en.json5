@@ -961,9 +961,13 @@
 
   "community.page.metadataUsage": "Usage by Metadata",
 
+  "community.page.statistics": "Statistics",
+
   "collection.page.usageDashboard": "Usage Dashboard",
 
   "collection.page.metadataUsage": "Usage by Metadata",
+
+  "collection.page.statistics": "Statistics",
 
   // Staff activity report (UNAPEC extension over the audit trail)
   "otcloud.staff-activity.title": "Staff Activity",
@@ -983,6 +987,8 @@
   "otcloud.staff-activity.loading": "Loading staff activity...",
 
   "otcloud.staff-activity.no-data": "No staff activity recorded for this period. If this is unexpected, check that auditing is enabled on the server (audit.enabled).",
+
+  "otcloud.staff-activity.total-items-created": "{{ count }} item(s) added to the repository in this period",
 
   "otcloud.staff-activity.total": "{{ count }} staff member(s)",
 
@@ -1050,6 +1056,16 @@
 
   "otcloud.metadata-usage.field.language": "Language",
 
+  "otcloud.metadata-usage.heading.author": "Top Authors",
+
+  "otcloud.metadata-usage.heading.subject": "Top Subjects",
+
+  "otcloud.metadata-usage.heading.type": "Top Item Types",
+
+  "otcloud.metadata-usage.heading.publisher": "Top Publishers",
+
+  "otcloud.metadata-usage.heading.language": "Top Languages",
+
   "otcloud.metadata-usage.start-date": "Start date",
 
   "otcloud.metadata-usage.end-date": "End date",
@@ -1075,6 +1091,29 @@
   "otcloud.metadata-usage.table.downloads": "Downloads",
 
   "otcloud.metadata-usage.table.items": "Items",
+
+  // Top searches (UNAPEC extension)
+  "otcloud.top-searches.title": "Top Searches",
+
+  "otcloud.top-searches.start-date": "Start date",
+
+  "otcloud.top-searches.end-date": "End date",
+
+  "otcloud.top-searches.apply": "Apply",
+
+  "otcloud.top-searches.export-csv": "Export CSV",
+
+  "otcloud.top-searches.loading": "Loading top searches...",
+
+  "otcloud.top-searches.no-data": "No searches recorded for this period.",
+
+  "otcloud.top-searches.total": "{{ count }} search term(s)",
+
+  "otcloud.top-searches.page-size": "Per page",
+
+  "otcloud.top-searches.table.query": "Search term",
+
+  "otcloud.top-searches.table.count": "Searches",
 
   "auth.errors.invalid-user": "Invalid email address or password.",
 
@@ -3737,6 +3776,26 @@
   "menu.section.registries_metadata": "Metadata",
 
   "menu.section.statistics": "Statistics",
+
+  // Children of the Statistics dropdown in the public navbar. Scoped to the community or collection
+  // being viewed, or to the whole repository elsewhere.
+  "menu.section.statistics.overview": "Usage Overview",
+
+  "menu.section.statistics.top-items": "Top Items",
+
+  "menu.section.statistics.top-searches": "Top Searches",
+
+  "menu.section.statistics.top-authors": "Top Authors",
+
+  "menu.section.statistics.top-publishers": "Top Publishers",
+
+  "menu.section.statistics.top-subjects": "Top Subjects",
+
+  "menu.section.statistics.top-countries": "Top Countries",
+
+  "menu.section.statistics.top-types": "Top Types",
+
+  "menu.section.statistics.detailed": "Detailed Statistics",
 
   "menu.section.statistics_task": "Statistics Task",
 

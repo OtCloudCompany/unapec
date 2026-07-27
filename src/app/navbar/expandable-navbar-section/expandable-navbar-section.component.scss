@@ -7,6 +7,16 @@
     overflow: hidden;
     min-width: 100%;
     top: 100%;
+    left: 0;
+
+    // This dropdown is plain Angular-toggled markup, not Bootstrap's JS/Popper-driven one, so it
+    // never carries the `data-bs-popper` attribute Bootstrap's own `.dropdown-menu-end` rule is
+    // conditioned on. Position explicitly instead of relying on that rule.
+    &.dropdown-menu-end {
+      left: auto;
+      right: 0;
+    }
+
     @include media-breakpoint-down(xs) {
       border: 0;
       background-color: var(--ds-expandable-navbar-bg);

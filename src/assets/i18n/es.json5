@@ -900,6 +900,42 @@
 
   "admin.batch-import.page.remove": "eliminar",
 
+  "otcloud.metadata-usage.title": "Uso por campo de metadatos",
+
+  "otcloud.metadata-usage.heading.author": "Principales autores",
+
+  "otcloud.metadata-usage.heading.subject": "Principales materias",
+
+  "otcloud.metadata-usage.heading.type": "Principales tipos de ítem",
+
+  "otcloud.metadata-usage.heading.publisher": "Principales editoriales",
+
+  "otcloud.metadata-usage.heading.language": "Principales idiomas",
+
+  "otcloud.top-searches.title": "Búsquedas más frecuentes",
+
+  "otcloud.top-searches.start-date": "Fecha de inicio",
+
+  "otcloud.top-searches.end-date": "Fecha de fin",
+
+  "otcloud.top-searches.apply": "Aplicar",
+
+  "otcloud.top-searches.export-csv": "Exportar CSV",
+
+  "otcloud.top-searches.loading": "Cargando búsquedas más frecuentes...",
+
+  "otcloud.top-searches.no-data": "No se registraron búsquedas para este período.",
+
+  "otcloud.top-searches.total": "{{ count }} término(s) de búsqueda",
+
+  "otcloud.top-searches.page-size": "Por página",
+
+  "otcloud.top-searches.table.query": "Término de búsqueda",
+
+  "otcloud.top-searches.table.count": "Búsquedas",
+
+  "otcloud.staff-activity.total-items-created": "{{ count }} ítem(s) añadido(s) al repositorio en este período",
+
   "auth.errors.invalid-user": "Dirección de correo electrónico o contraseña no válidos.",
 
   "auth.messages.expired": "Su sesión ha caducado. Inicie sesión de nuevo.",
@@ -1350,9 +1386,15 @@
 
   "collection.page.license": "Licencia",
 
+  "collection.page.metadataUsage": "Uso por metadatos",
+
   "collection.page.news": "Noticias",
 
   "collection.page.options": "Opciones",
+
+  "collection.page.statistics": "Estadísticas",
+
+  "collection.page.usageDashboard": "Panel de uso",
 
   "collection.search.breadcrumbs": "Buscar",
 
@@ -1598,9 +1640,15 @@
 
   "community.page.license": "Licencia",
 
+  "community.page.metadataUsage": "Uso por metadatos",
+
   "community.page.news": "Noticias",
 
   "community.page.options": "Opciones",
+
+  "community.page.statistics": "Estadísticas",
+
+  "community.page.usageDashboard": "Panel de uso",
 
   "community.all-lists.head": "Subcomunidades y colecciones",
 
@@ -3561,6 +3609,24 @@
   "menu.section.registries_metadata": "Metadatos",
 
   "menu.section.statistics": "Estadísticas",
+
+  "menu.section.statistics.overview": "Resumen de uso",
+
+  "menu.section.statistics.top-items": "Ítems más vistos",
+
+  "menu.section.statistics.top-searches": "Búsquedas más frecuentes",
+
+  "menu.section.statistics.top-authors": "Principales autores",
+
+  "menu.section.statistics.top-publishers": "Principales editoriales",
+
+  "menu.section.statistics.top-subjects": "Principales materias",
+
+  "menu.section.statistics.top-countries": "Principales países",
+
+  "menu.section.statistics.top-types": "Principales tipos",
+
+  "menu.section.statistics.detailed": "Estadísticas detalladas",
 
   "menu.section.statistics_task": "Tarea de estadísticas",
 

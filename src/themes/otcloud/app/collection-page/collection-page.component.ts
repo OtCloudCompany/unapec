@@ -4,6 +4,7 @@ import {
   Component,
 } from '@angular/core';
 import { RouterOutlet, RouterModule } from '@angular/router';
+import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { CollectionPageComponent as BaseComponent } from '../../../../app/collection-page/collection-page.component';
@@ -36,6 +37,7 @@ import { VarDirective } from '../../../../app/shared/utils/var.directive';
     ComcolPageLogoComponent,
     DsoEditMenuComponent,
     ErrorComponent,
+    NgbDropdownModule,
     RouterOutlet,
     RouterModule,
     ThemedComcolPageBrowseByComponent,

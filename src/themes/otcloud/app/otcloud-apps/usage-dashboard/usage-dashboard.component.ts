@@ -17,6 +17,10 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import {
+  NgbDateStruct,
+  NgbDatepickerModule,
+} from '@ng-bootstrap/ng-bootstrap';
 import { TranslateModule } from '@ngx-translate/core';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { Subscription } from 'rxjs';
@@ -29,6 +33,10 @@ import {
 } from 'src/config/app-config.interface';
 
 import { HighchartsService } from '../highcharts-service';
+import {
+  isoToNgbDate,
+  ngbDateToIso,
+} from '../ngb-date.util';
 
 interface LabelledCount {
   label: string;
@@ -68,7 +76,7 @@ interface SeriesResponse {
  */
 @Component({
   selector: 'ds-usage-dashboard',
-  imports: [CommonModule, ReactiveFormsModule, TranslateModule, HighchartsChartModule],
+  imports: [CommonModule, NgbDatepickerModule, ReactiveFormsModule, TranslateModule, HighchartsChartModule],
   templateUrl: './usage-dashboard.component.html',
   styleUrl: './usage-dashboard.component.scss',
 })
@@ -92,8 +100,8 @@ export class UsageDashboardComponent implements OnInit, OnDestroy {
    * Default reporting window when the user has not chosen one: the last twelve months.
    */
   filterForm = new FormGroup({
-    startDate: new FormControl(this.defaultStart()),
-    endDate: new FormControl(this.today()),
+    startDate: new FormControl<NgbDateStruct | null>(isoToNgbDate(this.defaultStart())),
+    endDate: new FormControl<NgbDateStruct | null>(isoToNgbDate(this.today())),
     gap: new FormControl('month'),
   });
 
@@ -146,8 +154,8 @@ export class UsageDashboardComponent implements OnInit, OnDestroy {
       return;
     }
 
-    const start = this.filterForm.value.startDate;
-    const end = this.filterForm.value.endDate;
+    const start = ngbDateToIso(this.filterForm.value.startDate);
+    const end = ngbDateToIso(this.filterForm.value.endDate);
     if (!start || !end) {
       this.validationError = 'Both a start and an end date are required.';
       this.cdr.detectChanges();
@@ -170,6 +178,7 @@ export class UsageDashboardComponent implements OnInit, OnDestroy {
         this.dashboard = response;
         this.isLoading = false;
         this.cdr.detectChanges();
+        this.scrollToFragment();
       },
       error: (err) => {
         console.error('Error fetching usage dashboard:', err);
@@ -240,6 +249,20 @@ export class UsageDashboardComponent implements OnInit, OnDestroy {
 
   onSubmit(): void {
     this.load();
+  }
+
+  /**
+   * Jump to the section named by the route fragment, e.g. when arriving from the "Top Countries"
+   * quick link. Deferred a tick because the target card only exists once `dashboard` has rendered.
+   */
+  private scrollToFragment(): void {
+    const fragment = this.route.snapshot.fragment;
+    if (!fragment) {
+      return;
+    }
+    setTimeout(() => {
+      document.getElementById(fragment)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
   }
 
   private endpoint(path: string): string {

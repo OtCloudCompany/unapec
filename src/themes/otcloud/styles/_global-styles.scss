@@ -310,7 +310,7 @@ ds-rss a {
 }
 
 footer .top-footer {
-    background-color: var(--unapec-red) !important;
+    background-color: var(--unapec-blue) !important;
 }
 
 footer .btn-link {
@@ -355,4 +355,18 @@ span.bg-unapec-light-blue {
 
 #main-navbar {
     justify-content: flex-end !important;
+}
+
+.add .dropdown-toggle,
+.dropdown-toggle {
+    color: var(--unapec-red) !important;
+}
+
+header .add .dropdown-toggle,
+.dropdown-toggle {
+    color: var(--unapec-blue) !important;
+}
+
+.page-not-found .btn-primary {
+    color: white !important;
 }

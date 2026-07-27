@@ -17,8 +17,15 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import {
+  NgbDateStruct,
+  NgbDatepickerModule,
+} from '@ng-bootstrap/ng-bootstrap';
 import { TranslateModule } from '@ngx-translate/core';
-import { Subscription } from 'rxjs';
+import {
+  combineLatest,
+  Subscription,
+} from 'rxjs';
 import { DSONameService } from 'src/app/core/breadcrumbs/dso-name.service';
 import { DSpaceObjectDataService } from 'src/app/core/data/dspace-object-data.service';
 import { getFirstSucceededRemoteData } from 'src/app/core/shared/operators';
@@ -26,6 +33,8 @@ import {
   APP_CONFIG,
   AppConfig,
 } from 'src/config/app-config.interface';
+
+import { ngbDateToIso } from '../ngb-date.util';
 
 export interface MetadataUsageRow {
   id: string;
@@ -45,6 +54,12 @@ export interface MetadataUsageResponse {
   number: number;
 }
 
+interface FieldOption {
+  value: string;
+  labelKey: string;
+  headingKey?: string;
+}
+
 /**
  * Usage aggregated by the values of a metadata field: which authors, subjects, types or departments
  * attract the most traffic.
@@ -57,7 +72,7 @@ export interface MetadataUsageResponse {
  */
 @Component({
   selector: 'ds-metadata-usage',
-  imports: [CommonModule, ReactiveFormsModule, TranslateModule],
+  imports: [CommonModule, NgbDatepickerModule, ReactiveFormsModule, TranslateModule],
   templateUrl: './metadata-usage.component.html',
   styleUrl: './metadata-usage.component.scss',
 })
@@ -70,13 +85,19 @@ export class MetadataUsageComponent implements OnInit, OnDestroy {
    * Fields offered in the picker. Any schema.element[.qualifier] the repository uses is valid; these
    * are simply the ones worth reaching for first.
    */
-  readonly fieldOptions = [
-    { value: 'dc.contributor.author', labelKey: 'otcloud.metadata-usage.field.author' },
-    { value: 'dc.subject', labelKey: 'otcloud.metadata-usage.field.subject' },
-    { value: 'dc.type', labelKey: 'otcloud.metadata-usage.field.type' },
-    { value: 'dc.publisher', labelKey: 'otcloud.metadata-usage.field.publisher' },
-    { value: 'dc.language.iso', labelKey: 'otcloud.metadata-usage.field.language' },
+  fieldOptions: FieldOption[] = [
+    { value: 'dc.contributor.author', labelKey: 'otcloud.metadata-usage.field.author', headingKey: 'otcloud.metadata-usage.heading.author' },
+    { value: 'dc.subject', labelKey: 'otcloud.metadata-usage.field.subject', headingKey: 'otcloud.metadata-usage.heading.subject' },
+    { value: 'dc.type', labelKey: 'otcloud.metadata-usage.field.type', headingKey: 'otcloud.metadata-usage.heading.type' },
+    { value: 'dc.publisher', labelKey: 'otcloud.metadata-usage.field.publisher', headingKey: 'otcloud.metadata-usage.heading.publisher' },
+    { value: 'dc.language.iso', labelKey: 'otcloud.metadata-usage.field.language', headingKey: 'otcloud.metadata-usage.heading.language' },
   ];
+
+  /**
+   * Translation key for the page heading. Specific ("Top Authors") for the curated fields above,
+   * generic for a hand-written or bookmarked field the picker does not otherwise know about.
+   */
+  headingKey = 'otcloud.metadata-usage.title';
 
   rows: MetadataUsageRow[] = [];
   resolvedUuid: string | null = null;
@@ -96,8 +117,8 @@ export class MetadataUsageComponent implements OnInit, OnDestroy {
 
   filterForm = new FormGroup({
     field: new FormControl('dc.contributor.author'),
-    startDate: new FormControl(''),
-    endDate: new FormControl(''),
+    startDate: new FormControl<NgbDateStruct | null>(null),
+    endDate: new FormControl<NgbDateStruct | null>(null),
     size: new FormControl(20),
   });
 
@@ -114,16 +135,38 @@ export class MetadataUsageComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
-    this.routeSub = this.route.params.subscribe((params) => {
-      this.resolvedUuid = params['uuid'] || this.uuid || this.object?.uuid || this.object?.id;
-      if (!this.resolvedUuid) {
-        this.errorMessage = 'No UUID provided for the metadata usage report.';
-        this.cdr.detectChanges();
-        return;
-      }
-      this.resolveName();
-      this.fetch(true);
-    });
+    // Both are watched together so that navigating between "Top Authors" and "Top Subjects" — which
+    // changes only the query string — re-runs the report instead of leaving the previous field's
+    // results on screen.
+    this.routeSub = combineLatest([this.route.params, this.route.queryParams])
+      .subscribe(([params, queryParams]) => {
+        this.resolvedUuid = params['uuid'] || this.uuid || this.object?.uuid || this.object?.id;
+        if (!this.resolvedUuid) {
+          this.errorMessage = 'No UUID provided for the metadata usage report.';
+          this.cdr.detectChanges();
+          return;
+        }
+
+        const requestedField = queryParams['field'];
+        if (requestedField) {
+          this.filterForm.patchValue({ field: requestedField }, { emitEvent: false });
+          this.ensureFieldOption(requestedField);
+        }
+
+        this.resolveName();
+        this.fetch(true);
+      });
+  }
+
+  /**
+   * Make sure the field picker can display whatever field was requested, even one that is not in
+   * the curated list, so a hand-written or bookmarked link does not silently report on the wrong
+   * field.
+   */
+  private ensureFieldOption(field: string): void {
+    if (!this.fieldOptions.some((option) => option.value === field)) {
+      this.fieldOptions = [...this.fieldOptions, { value: field, labelKey: field }];
+    }
   }
 
   private resolveName(): void {
@@ -155,14 +198,18 @@ export class MetadataUsageComponent implements OnInit, OnDestroy {
 
     this.pageSize = this.filterForm.value.size || 20;
 
+    const field = this.filterForm.value.field || 'dc.contributor.author';
+    const option = this.fieldOptions.find((candidate) => candidate.value === field);
+    this.headingKey = option?.headingKey || 'otcloud.metadata-usage.title';
+
     let params = new HttpParams()
       .set('uuid', this.resolvedUuid)
-      .set('field', this.filterForm.value.field || 'dc.contributor.author')
+      .set('field', field)
       .set('size', this.pageSize.toString())
       .set('page', this.currentPage.toString());
 
-    const start = this.filterForm.value.startDate;
-    const end = this.filterForm.value.endDate;
+    const start = ngbDateToIso(this.filterForm.value.startDate);
+    const end = ngbDateToIso(this.filterForm.value.endDate);
     if (start && end) {
       params = params.set('startDate', `${start}T00:00:00Z`).set('endDate', `${end}T23:59:59Z`);
     }

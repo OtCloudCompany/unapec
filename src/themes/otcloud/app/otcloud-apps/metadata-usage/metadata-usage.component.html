@@ -1,5 +1,5 @@
 <div class="container metadata-usage">
-  <h2>{{ 'otcloud.metadata-usage.title' | translate }}</h2>
+  <h2>{{ headingKey | translate }}</h2>
   @if (resolvedObjectName) {
     <p class="text-muted">{{ resolvedObjectName }}</p>
   }
@@ -15,11 +15,13 @@
     </div>
     <div class="col-auto">
       <label class="form-label" for="metadata-usage-start">{{ 'otcloud.metadata-usage.start-date' | translate }}</label>
-      <input id="metadata-usage-start" class="form-control" type="date" formControlName="startDate">
+      <input id="metadata-usage-start" class="form-control" placeholder="yyyy-mm-dd" formControlName="startDate"
+        ngbDatepicker #metadataUsageDStart="ngbDatepicker" (click)="metadataUsageDStart.toggle()">
     </div>
     <div class="col-auto">
       <label class="form-label" for="metadata-usage-end">{{ 'otcloud.metadata-usage.end-date' | translate }}</label>
-      <input id="metadata-usage-end" class="form-control" type="date" formControlName="endDate">
+      <input id="metadata-usage-end" class="form-control" placeholder="yyyy-mm-dd" formControlName="endDate"
+        ngbDatepicker #metadataUsageDEnd="ngbDatepicker" (click)="metadataUsageDEnd.toggle()">
     </div>
     <div class="col-auto">
       <button class="btn btn-primary" type="submit" [disabled]="isLoading">

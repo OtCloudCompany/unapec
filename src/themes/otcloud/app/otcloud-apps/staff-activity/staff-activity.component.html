@@ -5,11 +5,13 @@
   <form [formGroup]="filterForm" (ngSubmit)="onSubmit()" class="row g-2 align-items-end mb-3">
     <div class="col-auto">
       <label class="form-label" for="staff-activity-start">{{ 'otcloud.staff-activity.start-date' | translate }}</label>
-      <input id="staff-activity-start" class="form-control" type="date" formControlName="startDate">
+      <input id="staff-activity-start" class="form-control" placeholder="yyyy-mm-dd" formControlName="startDate"
+        ngbDatepicker #staffActivityDStart="ngbDatepicker" (click)="staffActivityDStart.toggle()">
     </div>
     <div class="col-auto">
       <label class="form-label" for="staff-activity-end">{{ 'otcloud.staff-activity.end-date' | translate }}</label>
-      <input id="staff-activity-end" class="form-control" type="date" formControlName="endDate">
+      <input id="staff-activity-end" class="form-control" placeholder="yyyy-mm-dd" formControlName="endDate"
+        ngbDatepicker #staffActivityDEnd="ngbDatepicker" (click)="staffActivityDEnd.toggle()">
     </div>
     <div class="col-auto">
       <button class="btn btn-primary" type="submit" [disabled]="isLoading">
@@ -28,6 +30,13 @@
       </button>
     </div>
   </form>
+
+  @if (totalItemsCreated !== null) {
+    <div class="alert alert-primary d-inline-flex align-items-center gap-2 mb-3">
+      <i class="fas fa-file-circle-plus" aria-hidden="true"></i>
+      <span>{{ 'otcloud.staff-activity.total-items-created' | translate: { count: totalItemsCreated } }}</span>
+    </div>
+  }
 
   @if (validationError) {
     <div class="alert alert-warning">{{ validationError }}</div>

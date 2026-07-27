@@ -50,7 +50,10 @@ export class LinkMenuItemComponent implements OnInit {
   navigate(event: any) {
     event.preventDefault();
     if (!this.item.disabled && this.getRouterLink()) {
-      this.router.navigate([this.getRouterLink()]);
+      this.router.navigate([this.getRouterLink()], {
+        queryParams: this.item.queryParams,
+        fragment: this.item.fragment,
+      });
     }
     event.stopPropagation();
   }

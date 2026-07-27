@@ -4,6 +4,7 @@
    [attr.data-test]="'link-menu-item.'+item.text"
    [routerLink]="getRouterLink()"
    [queryParams]="item.queryParams"
+   [fragment]="item.fragment"
    (click)="$event.stopPropagation()"
    (keyup.space)="navigate($event)"
    (keydown.enter)="navigate($event)"

@@ -46,6 +46,7 @@ import { viewTrackerResolver } from './statistics/angulartics/dspace/view-tracke
 import { provideSubmissionState } from './submission/provide-submission-state';
 import { SUGGESTION_MODULE_PATH } from './suggestions-page/suggestions-page-routing-paths';
 import { AboutUsComponent } from 'src/themes/otcloud/app/about-us/about-us.component';
+import { reportDsoResolver } from 'src/themes/otcloud/app/otcloud-apps/report-dso.resolver';
 
 export const APP_ROUTES: Route[] = [
   { path: INTERNAL_SERVER_ERROR, component: ThemedPageInternalServerErrorComponent },
@@ -170,6 +171,7 @@ export const APP_ROUTES: Route[] = [
         path: 'top-items-stats/:uuid',
         loadComponent: () => import('../themes/otcloud/app/otcloud-apps/top-items-stats/top-items-stats.component')
           .then((m) => m.TopItemsStatsComponent),
+        resolve: { dso: reportDsoResolver },
         canActivate: [endUserAgreementCurrentUserGuard],
       },
       {
@@ -182,12 +184,21 @@ export const APP_ROUTES: Route[] = [
         path: 'usage-dashboard/:uuid',
         loadComponent: () => import('../themes/otcloud/app/otcloud-apps/usage-dashboard/usage-dashboard.component')
           .then((m) => m.UsageDashboardComponent),
+        resolve: { dso: reportDsoResolver },
         canActivate: [endUserAgreementCurrentUserGuard],
       },
       {
         path: 'metadata-usage/:uuid',
         loadComponent: () => import('../themes/otcloud/app/otcloud-apps/metadata-usage/metadata-usage.component')
           .then((m) => m.MetadataUsageComponent),
+        resolve: { dso: reportDsoResolver },
+        canActivate: [endUserAgreementCurrentUserGuard],
+      },
+      {
+        path: 'top-searches/:uuid',
+        loadComponent: () => import('../themes/otcloud/app/otcloud-apps/top-searches/top-searches.component')
+          .then((m) => m.TopSearchesComponent),
+        resolve: { dso: reportDsoResolver },
         canActivate: [endUserAgreementCurrentUserGuard],
       },
       {

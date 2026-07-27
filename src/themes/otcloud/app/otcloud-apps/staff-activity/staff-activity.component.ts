@@ -15,13 +15,18 @@ import {
   FormGroup,
   ReactiveFormsModule,
 } from '@angular/forms';
-import { NgbDatepickerModule } from '@ng-bootstrap/ng-bootstrap';
+import {
+  NgbDateStruct,
+  NgbDatepickerModule,
+} from '@ng-bootstrap/ng-bootstrap';
 import { TranslateModule } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 import {
   APP_CONFIG,
   AppConfig,
 } from 'src/config/app-config.interface';
+
+import { ngbDateToIso } from '../ngb-date.util';
 
 export interface StaffActivityRow {
   id: string;
@@ -74,13 +79,20 @@ export class StaffActivityComponent implements OnInit, OnDestroy {
   totalElements = 0;
   totalPages = 1;
 
+  /**
+   * Repository-wide total of items created in the reporting period, across every staff member -
+   * not just the ones on the current page of {@link rows}.
+   */
+  totalItemsCreated: number | null = null;
+
   filterForm = new FormGroup({
-    startDate: new FormControl(''),
-    endDate: new FormControl(''),
+    startDate: new FormControl<NgbDateStruct | null>(null),
+    endDate: new FormControl<NgbDateStruct | null>(null),
     size: new FormControl(20),
   });
 
   private sub?: Subscription;
+  private summarySub?: Subscription;
   private csvSub?: Subscription;
 
   constructor(
@@ -130,6 +142,30 @@ export class StaffActivityComponent implements OnInit, OnDestroy {
         this.cdr.detectChanges();
       },
     });
+
+    this.fetchSummary();
+  }
+
+  /**
+   * The repository-wide "items created" total doesn't fit a paged response, so it's fetched
+   * separately with the same date filter.
+   */
+  private fetchSummary(): void {
+    const params = this.withDateRange(new HttpParams());
+
+    this.summarySub?.unsubscribe();
+    this.summarySub = this.http.get<{ totalItemsCreated: number }>(this.endpoint() + '/summary', { params })
+      .subscribe({
+        next: (response) => {
+          this.totalItemsCreated = response.totalItemsCreated;
+          this.cdr.detectChanges();
+        },
+        error: (err) => {
+          console.error('Error fetching staff activity summary:', err);
+          this.totalItemsCreated = null;
+          this.cdr.detectChanges();
+        },
+      });
   }
 
   onSubmit(): void {
@@ -144,7 +180,7 @@ export class StaffActivityComponent implements OnInit, OnDestroy {
   }
 
   onReset(): void {
-    this.filterForm.patchValue({ startDate: '', endDate: '' });
+    this.filterForm.patchValue({ startDate: null, endDate: null });
     this.validationError = null;
     this.fetch(true);
   }
@@ -209,31 +245,23 @@ export class StaffActivityComponent implements OnInit, OnDestroy {
   }
 
   /**
-   * Add the selected reporting period to a parameter set, accepting either a datepicker struct or a
-   * plain date string. The period is sent as a whole-day UTC range.
+   * Add the selected reporting period to a parameter set. The period is sent as a whole-day UTC
+   * range.
    */
   private withDateRange(params: HttpParams): HttpParams {
-    const start = this.filterForm.value.startDate as any;
-    const end = this.filterForm.value.endDate as any;
+    const start = ngbDateToIso(this.filterForm.value.startDate);
+    const end = ngbDateToIso(this.filterForm.value.endDate);
     if (!start || !end) {
       return params;
     }
     return params
-      .set('startDate', this.toIso(start, '00:00:00'))
-      .set('endDate', this.toIso(end, '23:59:59'));
-  }
-
-  private toIso(value: any, time: string): string {
-    if (value && typeof value === 'object' && 'year' in value) {
-      const month = value.month.toString().padStart(2, '0');
-      const day = value.day.toString().padStart(2, '0');
-      return `${value.year}-${month}-${day}T${time}Z`;
-    }
-    return `${value}T${time}Z`;
+      .set('startDate', `${start}T00:00:00Z`)
+      .set('endDate', `${end}T23:59:59Z`);
   }
 
   ngOnDestroy(): void {
     this.sub?.unsubscribe();
+    this.summarySub?.unsubscribe();
     this.csvSub?.unsubscribe();
   }
 }

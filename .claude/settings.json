@@ -1,0 +1,39 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git show *)",
+      "Bash(xargs -I{} sh -c 'grep -l \"topItemsStats\" {}')",
+      "PowerShell(Get-NetTCPConnection -State Listen -ErrorAction SilentlyContinue | Where-Object { $_.LocalPort -in 4000,4200,3000,8080 } | Select-Object LocalPort,OwningProcess)",
+      "Bash(npx --version)",
+      "Read(//f/projects/unapec/.claude/**)",
+      "Bash(command -v chromium-cli)",
+      "Bash(node -e \"console.log\\(require.resolve\\('playwright'\\)\\)\")",
+      "Bash(npm ls *)",
+      "Bash(npm root *)",
+      "Bash(timeout 20 npx --yes playwright --version)",
+      "Bash(timeout 60 npx --yes playwright install chromium --with-deps)",
+      "Bash(curl -s http://localhost:4000 -o /dev/null -w \"%{http_code}\\\\n\" --max-time 10)",
+      "Bash(curl -s \"http://localhost:4000/server/api/core/communities?size=3\" -H \"Accept: application/json\" --max-time 15)",
+      "Bash(curl -s \"http://localhost:8080/server/api/core/communities?size=3\" -H \"Accept: application/json\" --max-time 15)",
+      "Bash(curl -sv \"http://localhost:8080/server/api/core/communities?size=3\" -H \"Accept: application/json\" --max-time 15)",
+      "Bash(npm init *)",
+      "Bash(npm install *)",
+      "Bash(node run_repro.js)",
+      "Bash(npx playwright *)",
+      "Bash(node run_live.js)",
+      "Bash(node inspect_css.js)",
+      "Bash(node inspect_css2.js)",
+      "Read(//f/projects/unapec-backend/**)",
+      "Read(//f/projects/unapec-backend/dspace-server-webapp/**)",
+      "Read(//f/projects/unapec-backend/dspace-server-webapp/src/main/java/org/dspace/app/rest/**)",
+      "Read(//f/projects/unapec-backend/dspace-server-webapp/src/main/java/org/dspace/app/rest/utils/**)",
+      "Bash(node -e ' *)",
+      "Read(//c/Users/otuom/.claude/projects/f--projects-unapec/**)",
+      "Bash(echo \"exit: $?\")"
+    ],
+    "additionalDirectories": [
+      "F:\\projects\\unapec-backend\\dspace-server-webapp\\src\\main\\java\\org\\dspace\\app\\rest\\model",
+      "F:\\projects\\unapec-backend\\dspace-server-webapp\\src\\main\\java\\org\\dspace\\app\\rest"
+    ]
+  }
+}
