@@ -12,10 +12,10 @@
   "item.page.visitsByMonth": "Visitas por mes",
   "item.page.downloadsByMonth": "Descargas por mes",
 
-    "item.page.topCities": "Top Cities",
-  "item.page.topCountries": "Top Countries",
-  "item.page.views": "Views",
-  "item.page.city": "City",
+  "item.page.topCities": "Ciudades principales",
+  "item.page.topCountries": "Países principales",
+  "item.page.views": "Visitas",
+  "item.page.city": "Ciudad",
 
   "item.page.topItems.title": "Estadísticas de uso de {{name}}",
   "item.page.topItems.startDate": "Fecha de inicio",
