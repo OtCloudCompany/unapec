@@ -7579,4 +7579,12 @@
   "item.page.stats.country": "País",
 
   "item.page.stats.views": "Visitas",
+
+  "item.page.topCities": "Top Cities",
+
+  "item.page.topCountries": "Top Countries",
+
+  "item.page.views": "Views",
+
+  "item.page.city": "City",
 }
