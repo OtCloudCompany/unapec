@@ -900,7 +900,6 @@
 
   "admin.batch-import.page.remove": "remove",
 
-  // Audit trail (backported from DSpace 10)
   "audit.data.not-found": "No audits found.",
 
   "audit.data.self": "self",
@@ -969,7 +968,6 @@
 
   "collection.page.statistics": "Statistics",
 
-  // Staff activity report (UNAPEC extension over the audit trail)
   "otcloud.staff-activity.title": "Staff Activity",
 
   "otcloud.staff-activity.description": "Items created, archived, edited or deleted by each staff member. Counts are of distinct objects, not of audit records.",
@@ -1008,7 +1006,6 @@
 
   "otcloud.staff-activity.table.records": "Audit records",
 
-  // Usage dashboard (UNAPEC extension)
   "otcloud.usage-dashboard.title": "Usage Dashboard",
 
   "otcloud.usage-dashboard.start-date": "Start date",
@@ -1041,7 +1038,6 @@
 
   "otcloud.usage-dashboard.no-data": "No usage recorded for this period.",
 
-  // Usage by metadata field (UNAPEC extension)
   "otcloud.metadata-usage.title": "Usage by Metadata Field",
 
   "otcloud.metadata-usage.field": "Group by",
@@ -1092,7 +1088,6 @@
 
   "otcloud.metadata-usage.table.items": "Items",
 
-  // Top searches (UNAPEC extension)
   "otcloud.top-searches.title": "Top Searches",
 
   "otcloud.top-searches.start-date": "Start date",
@@ -3777,8 +3772,6 @@
 
   "menu.section.statistics": "Statistics",
 
-  // Children of the Statistics dropdown in the public navbar. Scoped to the community or collection
-  // being viewed, or to the whole repository elsewhere.
   "menu.section.statistics.overview": "Usage Overview",
 
   "menu.section.statistics.top-items": "Top Items",
@@ -7740,4 +7733,20 @@
   "community.page.topItemsStats": "View usage statistics",
 
   "collection.page.topItemsStats": "View usage statistics",
+
+  "item.page.TopCities": "Top Cities",
+
+  "item.page.TopCountries": "Top Countries",
+
+  "item.page.stats.country": "Country",
+
+  "item.page.stats.views": "Views",
+
+  "item.page.topCities": "Top Cities",
+
+  "item.page.topCountries": "Top Countries",
+
+  "item.page.views": "Views",
+
+  "item.page.city": "City",
 }

@@ -21,7 +21,10 @@ import {
   NgbDateStruct,
   NgbDatepickerModule,
 } from '@ng-bootstrap/ng-bootstrap';
-import { TranslateModule } from '@ngx-translate/core';
+import {
+  TranslateModule,
+  TranslateService,
+} from '@ngx-translate/core';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { Subscription } from 'rxjs';
 import { DSONameService } from 'src/app/core/breadcrumbs/dso-name.service';
@@ -116,8 +119,37 @@ export class UsageDashboardComponent implements OnInit, OnDestroy {
     private dsoService: DSpaceObjectDataService,
     private dsoNameService: DSONameService,
     private highchartsService: HighchartsService,
+    private translateService: TranslateService,
     @Inject(APP_CONFIG) protected appConfig: AppConfig,
   ) { }
+
+  private regionDisplayNames: any;
+  private regionDisplayNamesLang: string | null = null;
+
+  /**
+   * Resolve an ISO 3166-1 alpha-2 country code (as returned by the stats API) to its localized
+   * display name, e.g. "US" -> "United States". Falls back to the raw code when the runtime has
+   * no Intl.DisplayNames support or the code isn't recognized.
+   */
+  countryName(code: string): string {
+    if (!code) {
+      return code;
+    }
+    const lang = this.translateService.currentLang || 'en';
+    if (!this.regionDisplayNames || this.regionDisplayNamesLang !== lang) {
+      const DisplayNamesCtor = (Intl as any).DisplayNames;
+      if (!DisplayNamesCtor) {
+        return code;
+      }
+      try {
+        this.regionDisplayNames = new DisplayNamesCtor([lang], { type: 'region' });
+        this.regionDisplayNamesLang = lang;
+      } catch {
+        return code;
+      }
+    }
+    return this.regionDisplayNames.of(code.toUpperCase()) || code;
+  }
 
   ngOnInit(): void {
     this.Highcharts = this.highchartsService.getHighcharts();

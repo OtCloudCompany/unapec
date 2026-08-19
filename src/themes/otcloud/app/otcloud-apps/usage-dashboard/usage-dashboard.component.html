@@ -94,7 +94,7 @@
                 <tbody>
                   @for (row of dashboard.topCountries.slice(0, 10); track row.label) {
                     <tr>
-                      <td>{{ row.label }}</td>
+                      <td>{{ countryName(row.label) }}</td>
                       <td class="text-end">{{ row.views }}</td>
                     </tr>
                   }

@@ -7571,4 +7571,12 @@
   "community.page.topItemsStats": "Ver estadísticas de uso",
 
   "collection.page.topItemsStats": "Ver estadísticas de uso",
+
+  "item.page.TopCities": "Ciudades más visitadas",
+
+  "item.page.TopCountries": "Países más visitados",
+
+  "item.page.stats.country": "País",
+
+  "item.page.stats.views": "Visitas",
 }

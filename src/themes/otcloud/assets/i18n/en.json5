@@ -27,11 +27,19 @@
   "item.page.topItems.to": "to",
   "item.page.topItems.of": "of",
   "item.page.topItems.entries": "entries",
+  "item.page.stats.country": "Country",
+  "item.page.stats.views": "Views",
   "item.page.topItems.noData": "No usage statistics available for this collection/community.",
 
   "item.page.usageStatistics": "Usage Statistics",
   "item.page.usageMetrics": "Usage Metrics",
   "item.page.visitsByMonth": "Visits by Month",
+
+  "item.page.topCities": "Top Cities",
+  "item.page.topCountries": "Top Countries",
+  "item.page.views": "Views",
+  "item.page.city": "City",
+
   "item.page.downloadsByMonth": "Downloads by Month",
 
   "item.page.person.academicQualifications": "Academic Qualifications",
